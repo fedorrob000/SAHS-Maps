@@ -23,7 +23,13 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): void {
     // draw map
-    const img = document.getElementById('SAHS_MAP_UP.png');
+    const img = new Image();
+    img.src = 'SAHS_MAP_UP.png';
+    img.onload = () => {
+      this.ctx.drawImage(img,0,0);
+    };
+
+    this.ctx.drawImage(img, 10, 10);
 
     this.graph.AddVertex(1,ROOMS[0]);
     this.graph.AddVertex(2,ROOMS[1]);
