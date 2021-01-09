@@ -9,9 +9,9 @@ import {ROOMS} from './rooms';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'SAHS Maps';
-  private scale = 1;
+  private scale = .25;
 
   @ViewChild('canvas', {static: true})
   canvas: ElementRef<HTMLCanvasElement>;
@@ -29,18 +29,17 @@ export class AppComponent implements OnInit{
     img.src = 'assets/SAHS_MAP_UP.png';
     img.onload = () => {
       this.ctx.scale(this.scale, this.scale);
-      this.ctx.drawImage(img,0,0);
+      this.ctx.drawImage(img, 0, 0);
       this.ctx.strokeStyle = '#FF0000';
-      this.ctx.lineWidth +=3;
-      this.connectRooms(ROOMS[1], ROOMS[2]);
+      this.ctx.lineWidth += 3;
     };
+
     this.ctx.canvas.width = 1400;
     this.ctx.canvas.height = 1500;
     this.ctx.drawImage(img, 10, 10);
 
-    this.graph.AddVertex(1,ROOMS[1]);
-    this.graph.AddVertex(2,ROOMS[2]);
-    this.graph.AddEdge(1, 2, 1);
+    ROOMS.forEach(room => this.graph.AddVertex(this.graph.Vertexs().length + 1, room));
+    console.log(this.roomToID('H212'));
 
   }
 
@@ -48,6 +47,10 @@ export class AppComponent implements OnInit{
     this.ctx.moveTo(room1.xPosition * this.scale, room1.yPosition * this.scale);
     this.ctx.lineTo(room2.xPosition * this.scale, room2.yPosition * this.scale);
     this.ctx.stroke();
+  }
+
+  roomToID(roomNum: string): number {
+    return this.graph.Vertexs().find(v => v.value.roomNumber === roomNum).id;
   }
 
 }
