@@ -23,11 +23,15 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): void {
     // draw map
+    this.ctx = this.canvas.nativeElement.getContext('2d');
     const img = new Image();
     img.src = 'assets/SAHS_MAP_UP.png';
     img.onload = () => {
+      this.ctx.scale(.5,.5);
       this.ctx.drawImage(img,0,0);
     };
+    this.ctx.canvas.width = window.innerWidth - 100;
+    this.ctx.canvas.height = window.innerHeight - 100;
 
     this.ctx.drawImage(img, 10, 10);
 
