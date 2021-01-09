@@ -1,5 +1,5 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {Graph} from 'actslib';
+import {Graph, GraphEdge, GraphVertex} from 'actslib';
 import {Room} from './room';
 import {ROOMS} from './rooms';
 
@@ -11,7 +11,7 @@ import {ROOMS} from './rooms';
 })
 export class AppComponent implements OnInit {
   title = 'SAHS Maps';
-  private scale = .25;
+  private scale = 1;
 
   @ViewChild('canvas', {static: true})
   canvas: ElementRef<HTMLCanvasElement>;
@@ -32,18 +32,24 @@ export class AppComponent implements OnInit {
       this.ctx.drawImage(img, 0, 0);
       this.ctx.strokeStyle = '#FF0000';
       this.ctx.lineWidth += 3;
+
+
+      ROOMS.forEach(room => this.graph.AddVertex(this.graph.Vertexs().length + 1, room));
+      console.log(this.roomToID('H212'));
+      this.graph.AddEdge(this.roomToID('H212'), this.roomToID('H210'), 1);
+      this.connectRooms(this.graph.Edges()[0]);
     };
 
     this.ctx.canvas.width = 1400;
     this.ctx.canvas.height = 1500;
     this.ctx.drawImage(img, 10, 10);
 
-    ROOMS.forEach(room => this.graph.AddVertex(this.graph.Vertexs().length + 1, room));
-    console.log(this.roomToID('H212'));
-
   }
 
-  connectRooms(room1: Room, room2: Room): void {
+  connectRooms(edge: GraphEdge<any>): void {
+    const room1: Room = this.graph.Vertexs().find(v => v.id === edge.to).value;
+    const room2: Room = this.graph.Vertexs().find(v => v.id === edge.from).value;
+
     this.ctx.moveTo(room1.xPosition * this.scale, room1.yPosition * this.scale);
     this.ctx.lineTo(room2.xPosition * this.scale, room2.yPosition * this.scale);
     this.ctx.stroke();
@@ -52,5 +58,6 @@ export class AppComponent implements OnInit {
   roomToID(roomNum: string): number {
     return this.graph.Vertexs().find(v => v.value.roomNumber === roomNum).id;
   }
+
 
 }
