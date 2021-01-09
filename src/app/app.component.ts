@@ -24,7 +24,7 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
     // draw map
     const img = new Image();
-    img.src = 'SAHS_MAP_UP.png';
+    img.src = 'assets/SAHS_MAP_UP.png';
     img.onload = () => {
       this.ctx.drawImage(img,0,0);
     };
