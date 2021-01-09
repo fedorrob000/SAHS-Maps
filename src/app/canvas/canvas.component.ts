@@ -20,6 +20,9 @@ export class CanvasComponent implements OnInit {
 
     private gaph = new Graph<string, number>();
 
+    //VERTEX(ID, DATA)
+    //EDGE(FROM, TO, WEIGHT)
+
     ngOnInit(): void {
         this.gaph.AddVertex(1, 'test1');
         this.gaph.AddVertex(2, 'test2');
