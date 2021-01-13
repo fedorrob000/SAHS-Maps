@@ -9,4 +9,8 @@ export const ROOMS: Room[] = [
   {roomNumber: 'H210', xPosition: 525, yPosition: 140},
   {roomNumber: 'H208', xPosition: 400, yPosition: 230},
   {roomNumber: 'H222', xPosition: 770, yPosition: 210},
+
+  {roomNumber: '0', xPosition: 520, yPosition: 25},
+  {roomNumber: '1', xPosition: 610, yPosition: 60},
+
 ];
