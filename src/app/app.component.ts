@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
 
 
       ROOMS.forEach(room => this.graph.AddVertex(this.graph.Vertexs().length + 1, room));
-      console.log(this.roomToID('H212'));
+      // console.log(this.roomToID('H212'));
       this.graph.AddEdge(this.roomToID('H212'), this.roomToID('H210'), 1);
       this.graph.AddEdge(this.roomToID('C210'), this.roomToID('H210'), 1);
       this.graph.AddEdge(this.roomToID('H208'), this.roomToID('H210'), 1);
