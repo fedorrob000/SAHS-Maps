@@ -68,14 +68,22 @@ export const ROOMS: Room[] = [
   {roomNumber: 'E34U', xPosition: 1147, yPosition: 1000},
 
   //main hallway upstairs extra points
-  {roomNumber: 'M3U', xPosition: 464, yPosition: 860},
-  {roomNumber: 'M2U', xPosition: 494, yPosition: 739},
   {roomNumber: 'M0U', xPosition: 432, yPosition: 739},
+  {roomNumber: 'M1U', xPosition: 464, yPosition: 628},
+  {roomNumber: 'M2U', xPosition: 494, yPosition: 739},
+  {roomNumber: 'M3U', xPosition: 464, yPosition: 860},
 
-  //north d hallway upstairs
+  //north D hallway upstairs
+  {roomNumber: 'D11U', xPosition: 490, yPosition: 675},
+  {roomNumber: 'D12U', xPosition: 554, yPosition: 675},
+  {roomNumber: 'D13U', xPosition: 710, yPosition: 675},
+  {roomNumber: 'D14U', xPosition: 807, yPosition: 675},
 
-
-  //south d hallway upstairs
+  //south D hallway upstairs
   {roomNumber: 'D21U', xPosition: 490, yPosition: 809},
+  {roomNumber: 'D22U', xPosition: 589, yPosition: 809},
+  {roomNumber: 'D23U', xPosition: 675, yPosition: 809},
+  {roomNumber: 'D24U', xPosition: 804, yPosition: 809},
+  {roomNumber: 'D25U', xPosition: 804, yPosition: 862},// stairs
 
 ];

@@ -93,12 +93,28 @@ export class AppComponent implements OnInit {
       this.graph.AddEdge(this.roomToID('E32U'), this.roomToID('E33U'), 1); // E235 to E234/E236
       this.graph.AddEdge(this.roomToID('E33U'), this.roomToID('E34U'), 1); // E236 to stairwell
 
-      //hallway stuff
-      this.graph.AddEdge(this.roomToID('E21U'), this.roomToID('E11U'), 1); // main hall/E214 to E216/E215
-      this.graph.AddEdge(this.roomToID('E11U'), this.roomToID('M3U'), 1); // main hall/E214 to E216/E215
-      this.graph.AddEdge(this.roomToID('D21U'), this.roomToID('M2U'), 1); // main hall/E214 to E216/E215
-      this.graph.AddEdge(this.roomToID('M3U'), this.roomToID('D21U'), 1); // main hall/E214 to E216/E215
-      this.graph.AddEdge(this.roomToID('M2U'), this.roomToID('M0U'), 1); // main hall/E214 to E216/E215
+      // hall D north upstairs test
+      this.graph.AddEdge(this.roomToID('D11U'), this.roomToID('D12U'), 1); // E-Hall-North to D208
+      this.graph.AddEdge(this.roomToID('D12U'), this.roomToID('D13U'), 1); // D208 to D212
+      this.graph.AddEdge(this.roomToID('D13U'), this.roomToID('D14U'), 1); // D212 to D214/D216
+
+      // hall D south upstairs test
+      this.graph.AddEdge(this.roomToID('D21U'), this.roomToID('D22U'), 1); // E-Hall-South to D220
+      this.graph.AddEdge(this.roomToID('D22U'), this.roomToID('D23U'), 1); // D220 to D218
+      this.graph.AddEdge(this.roomToID('D23U'), this.roomToID('D24U'), 1); // D218 to above stairs
+      this.graph.AddEdge(this.roomToID('D24U'), this.roomToID('D25U'), 1); // above stairs to stairs
+
+      //main hall upstairs test
+      this.graph.AddEdge(this.roomToID('C11U'), this.roomToID('C21U'), 1); // C-Hall-North to C-Hall-South
+      this.graph.AddEdge(this.roomToID('C21U'), this.roomToID('M1U'), 1); // C-Hall-South to right of D206
+      this.graph.AddEdge(this.roomToID('M1U'), this.roomToID('D11U'), 1); // right of D206 to D-Hall-North
+      this.graph.AddEdge(this.roomToID('D11U'), this.roomToID('M2U'), 1); // D-Hall-North to center of main hall
+      this.graph.AddEdge(this.roomToID('M2U'), this.roomToID('M0U'), 1); // center of main hall to D203/D204/D205/D206
+      this.graph.AddEdge(this.roomToID('M2U'), this.roomToID('D21U'), 1); // center of main hall to D-Hall-South
+      this.graph.AddEdge(this.roomToID('D21U'), this.roomToID('M3U'), 1); // D-Hall-South to right of D204
+      this.graph.AddEdge(this.roomToID('M3U'), this.roomToID('E11U'), 1); // right of D204 to E-Hall-North
+      this.graph.AddEdge(this.roomToID('E11U'), this.roomToID('E21U'), 1); // E-Hall-North to E-Hall-South
+
 
       for (let i = 0; i < this.graph.EdgeNumber(); i++) {
         this.connectRooms(this.graph.Edges()[i]);
