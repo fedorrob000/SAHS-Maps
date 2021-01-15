@@ -33,16 +33,58 @@ export class AppComponent implements OnInit {
       this.ctx.strokeStyle = '#ff0000';
       this.ctx.lineWidth += 3;
 
-
+      // add all rooms as vertices
       ROOMS.forEach(room => this.graph.AddVertex(this.graph.Vertexs().length + 1, room));
       // console.log(this.roomToID('H212'));
-      this.graph.AddEdge(this.roomToID('H212'), this.roomToID('H210'), 1);
-      this.graph.AddEdge(this.roomToID('C210'), this.roomToID('H210'), 1);
-      this.graph.AddEdge(this.roomToID('H208'), this.roomToID('H210'), 1);
 
-      this.connectRooms(this.graph.Edges()[0]);
-      this.connectRooms(this.graph.Edges()[1]);
-      this.connectRooms(this.graph.Edges()[2]);
+      // hall 1 upstairs test
+      this.graph.AddEdge(this.roomToID('C11U'), this.roomToID('C12U'), 1); // main hall to C202
+      this.graph.AddEdge(this.roomToID('C12U'), this.roomToID('C13U'), 1); // C202 to C203/C204
+      this.graph.AddEdge(this.roomToID('C13U'), this.roomToID('C14U'), 1); // C203/C204 to C205
+      this.graph.AddEdge(this.roomToID('C14U'), this.roomToID('C15U'), 1); // C205 to C206/C207
+      this.graph.AddEdge(this.roomToID('C15U'), this.roomToID('C16U'), 1); // C206/C207 to C208
+      this.graph.AddEdge(this.roomToID('C16U'), this.roomToID('C17U'), 1); // C208 to C209/C210
+      this.graph.AddEdge(this.roomToID('C17U'), this.roomToID('C18U'), 1); // C209/C210 to C211/C212/hallway
+      this.graph.AddEdge(this.roomToID('C18U'), this.roomToID('C19U'), 1); // C211/C212 to stairs
+
+      // hall 2 upstairs test
+      this.graph.AddEdge(this.roomToID('C21U'), this.roomToID('C22U'), 1); // main hall to C214/C215
+      this.graph.AddEdge(this.roomToID('C22U'), this.roomToID('C23U'), 1); // C214/C215 to C216
+      this.graph.AddEdge(this.roomToID('C23U'), this.roomToID('C24U'), 1); // C216 to C217/C218
+      this.graph.AddEdge(this.roomToID('C24U'), this.roomToID('C25U'), 1); // C217/C218 to C220
+      this.graph.AddEdge(this.roomToID('C25U'), this.roomToID('C26U'), 1); // C220 to hallway
+      this.graph.AddEdge(this.roomToID('C26U'), this.roomToID('C27U'), 1); // hallway to C219
+      this.graph.AddEdge(this.roomToID('C27U'), this.roomToID('C28U'), 1); // C219 to C222/hallway/C221/C224
+      this.graph.AddEdge(this.roomToID('C28U'), this.roomToID('C29U'), 1); // C222/hallway/C221/C224 to stairs
+
+      // hall 3 upstairs test
+      this.graph.AddEdge(this.roomToID('E11U'), this.roomToID('E12U'), 1); // main hall to E202/E203
+      this.graph.AddEdge(this.roomToID('E12U'), this.roomToID('E13U'), 1); // E202/E203 to E204
+      this.graph.AddEdge(this.roomToID('E13U'), this.roomToID('E14U'), 1); // E204 to E205
+      this.graph.AddEdge(this.roomToID('E14U'), this.roomToID('E15U'), 1); // E205 to E207
+      this.graph.AddEdge(this.roomToID('E15U'), this.roomToID('E16U'), 1); // E207 to E206
+      this.graph.AddEdge(this.roomToID('E16U'), this.roomToID('E17U'), 1); // E206 to E208
+      this.graph.AddEdge(this.roomToID('E17U'), this.roomToID('E18U'), 1); // E208 to E209/E210/E211/E212/hallway
+      this.graph.AddEdge(this.roomToID('E18U'), this.roomToID('E19U'), 1); // E209/E210/E211/E212/hallway to stairs
+
+      // hall 4 upstairs test
+      this.graph.AddEdge(this.roomToID('E21U'), this.roomToID('E22U'), 1); // main hall/E214 to E216/E215
+      this.graph.AddEdge(this.roomToID('E22U'), this.roomToID('E23U'), 1); // E216/E215 to E218
+      this.graph.AddEdge(this.roomToID('E23U'), this.roomToID('E24U'), 1); // E218 to E217
+      this.graph.AddEdge(this.roomToID('E24U'), this.roomToID('E25U'), 1); // E217 to E220
+      this.graph.AddEdge(this.roomToID('E25U'), this.roomToID('E26U'), 1); // E220 to E222
+      this.graph.AddEdge(this.roomToID('E26U'), this.roomToID('E27U'), 1); // E222 to E223/E224/E225/E226/hallway
+      this.graph.AddEdge(this.roomToID('E27U'), this.roomToID('E28U'), 1); // E223/E224/E225/E226/hallway to stairs
+
+      this.graph.AddEdge(this.roomToID('E21U'), this.roomToID('E11U'), 1); // main hall/E214 to E216/E215
+      this.graph.AddEdge(this.roomToID('E11U'), this.roomToID('M3U'), 1); // main hall/E214 to E216/E215
+      this.graph.AddEdge(this.roomToID('D21U'), this.roomToID('M2U'), 1); // main hall/E214 to E216/E215
+      this.graph.AddEdge(this.roomToID('M3U'), this.roomToID('D21U'), 1); // main hall/E214 to E216/E215
+      this.graph.AddEdge(this.roomToID('M2U'), this.roomToID('M0U'), 1); // main hall/E214 to E216/E215
+
+      for (let i = 0; i < this.graph.EdgeNumber(); i++) {
+        this.connectRooms(this.graph.Edges()[i]);
+      }
     };
 
     this.ctx.canvas.width = 1400;
