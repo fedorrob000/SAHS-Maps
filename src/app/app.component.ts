@@ -41,19 +41,18 @@ export class AppComponent implements OnInit {
 
       // add all edges to graph
       EDGES.forEach(edge => {
-        try {
-          this.graph.AddEdge(this.roomToID(edge.roomOne), this.roomToID(edge.roomTwo), edge.weight);
-        } catch (e) {
-          console.error(e);
-          this.ctx.font = "30px Arial";
-          this.ctx.fillText(e + ' in method AddEdge with rooms: ' + edge.roomOne + ' and ' + edge.roomTwo, 50, 50);
+          try {
+            this.graph.AddEdge(this.roomToID(edge.roomOne), this.roomToID(edge.roomTwo), edge.weight);
+          } catch (e) {
+            console.error(e);
+            this.ctx.font = '30px Arial';
+            this.ctx.fillText(e + ' in method AddEdge with rooms: ' + edge.roomOne + ' and ' + edge.roomTwo, 50, 50);
+          }
         }
-      }
-    );
+      );
 
       const path = new ShortestPath(this.graph);
       console.log(path.shortestPath(this.roomToID('C11U'), this.roomToID('D24U')));
-
 
       for (let i = 0; i < this.graph.EdgeNumber(); i++) {
         this.connectRooms(this.graph.Edges()[i]);
