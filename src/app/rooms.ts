@@ -84,6 +84,6 @@ export const ROOMS: Room[] = [
   {roomNumber: 'D22U', xPosition: 589, yPosition: 809},
   {roomNumber: 'D23U', xPosition: 675, yPosition: 809},
   {roomNumber: 'D24U', xPosition: 804, yPosition: 809},
-  {roomNumber: 'D25U', xPosition: 804, yPosition: 862},// stairs
+  {roomNumber: 'D25U', xPosition: 804, yPosition: 862}, // stairs
 
 ];

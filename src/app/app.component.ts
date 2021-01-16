@@ -55,7 +55,7 @@ export class AppComponent implements OnInit {
       console.log(path.shortestPath(this.roomToID('C11U'), this.roomToID('D24U')));
 
       for (let i = 0; i < this.graph.EdgeNumber(); i++) {
-        this.connectRooms(this.graph.Edges()[i]);
+        this.drawEdge(this.graph.Edges()[i]);
       }
     };
 
@@ -65,7 +65,7 @@ export class AppComponent implements OnInit {
 
   }
 
-  connectRooms(edge: GraphEdge<any>): void {
+  drawEdge(edge: GraphEdge<any>): void {
     const room1: Room = this.graph.Vertexs().find(v => v.id === edge.to).value;
     const room2: Room = this.graph.Vertexs().find(v => v.id === edge.from).value;
 
