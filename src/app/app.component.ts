@@ -23,6 +23,7 @@ export class AppComponent implements OnInit {
   private img = new Image();
 
   private firstRun = true;
+  private firstRun2 = true;
   ngOnInit(): void {
     if (this.firstRun) {
       // draw map
@@ -30,17 +31,18 @@ export class AppComponent implements OnInit {
       this.img.src = 'assets/SAHS_MAP_UP.png';
       this.img.onload = () => {
         this.ctx.drawImage(this.img, 0, 0);
-        this.ctx.strokeStyle = '#ff0000';
-        this.ctx.lineWidth = 3;
-
+        //draw all edges
+        if (this.firstRun2) {
+          this.ctx.strokeStyle = '#ff0000';
+          this.ctx.lineWidth = 3;
+          for (let i = 0; i < this.graph.EdgeNumber(); i++) {
+            this.drawEdge(this.graph.Edges()[i]);
+          }
+          this.firstRun2 = false;
+        }
         //shortest path stuff
         // const path = new ShortestPath(this.graph);
         // console.log(path.shortestPath(this.roomToID('C11U'), this.roomToID('D24U')));
-
-        //draw all edges
-        for (let i = 0; i < this.graph.EdgeNumber(); i++) {
-          this.drawEdge(this.graph.Edges()[i]);
-        }
       };
 
       this.ctx.canvas.width = 2200;
@@ -93,7 +95,6 @@ export class AppComponent implements OnInit {
       this.ctx.canvas.height = 1650;
       this.img.src = 'assets/SAHS_MAP.png';
     }
-    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     this.switchMapNum++;
   }
 }
