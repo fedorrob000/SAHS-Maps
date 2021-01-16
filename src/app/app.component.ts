@@ -3,6 +3,7 @@ import {Graph, GraphEdge, GraphVertex} from 'actslib';
 import {Room} from './room';
 import {ROOMS} from './rooms';
 import {EDGES} from './edges';
+import {ShortestPath} from "./canvas/ShortestPath";
 
 
 @Component({
@@ -39,9 +40,19 @@ export class AppComponent implements OnInit {
       // console.log(this.roomToID('H212'));
 
       // add all edges to graph
-      EDGES.forEach(edge => this.graph.AddEdge(this.roomToID(edge.roomOne), this.roomToID(edge.roomTwo), edge.weight));
+      EDGES.forEach(edge => {
+        try {
+          this.graph.AddEdge(this.roomToID(edge.roomOne), this.roomToID(edge.roomTwo), edge.weight);
+        } catch (e) {
+          console.error(e);
+          this.ctx.font = "30px Arial";
+          this.ctx.fillText(e + ' in method AddEdge with rooms: ' + edge.roomOne + ' and ' + edge.roomTwo, 50, 50);
+        }
+      }
+    );
 
-
+      const path = new ShortestPath(this.graph);
+      console.log(path.shortestPath(this.roomToID('C11U'), this.roomToID('D24U')));
 
 
       for (let i = 0; i < this.graph.EdgeNumber(); i++) {
