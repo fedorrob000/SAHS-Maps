@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
   private firstRun = true;
   private firstRun2 = true;
   ngOnInit(): void {
-    // run only on first load of app ----------------------------------------------------
+    // run only on first load of app ------------------------------------------------------------------------------
     if (this.firstRun) {
 
       // draw map
