@@ -110,7 +110,7 @@ export const ROOMS: Room[] = [
 
   // hall A east downstairs
   {roomNumber: 'A12D', xPosition: 817, yPosition: 110},
-  {roomNumber: 'A13D', xPosition: 710, yPosition: 110},
+  {roomNumber: 'A13D', xPosition: 710, yPosition: 110}
 
   // hall B north downstairs
 

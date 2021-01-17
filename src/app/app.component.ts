@@ -39,16 +39,16 @@ export class AppComponent implements OnInit {
         if (this.currentlySelectedUpstairs) {
           this.ctx.lineWidth = 10;
           for (let i = 0; i < this.graph.EdgeNumber(); i++) {
-            // if (i < 57) {
+            if (i < 58) {
               this.drawEdge(this.graph.Edges()[i]);
-            // }
+            }
           }
         } else {
           this.ctx.lineWidth = 5;
           for (let i = 0; i < this.graph.EdgeNumber(); i++) {
-            // if (i >= 57) {
+            if (i >= 58) {
               this.drawEdge(this.graph.Edges()[i]);
-            // }
+            }
           }
         }
         // shortest path stuff
@@ -63,7 +63,9 @@ export class AppComponent implements OnInit {
       this.firstRun = false;
 
       // add all rooms as vertices
-      ROOMS.forEach(room => this.graph.AddVertex(this.graph.Vertexs().length, room));
+      ROOMS.forEach(room => {
+        this.graph.AddVertex(this.graph.Vertexs().length + 1, room);
+      });
 
       // add all edges to graph
       EDGES.forEach(edge => {
@@ -73,6 +75,7 @@ export class AppComponent implements OnInit {
             console.error(e);
             this.ctx.font = '30px Arial';
             this.ctx.fillText(e + ' in method AddEdge with rooms: ' + edge.roomOne + ' and ' + edge.roomTwo, 50, 50);
+            console.log(e + ' in method AddEdge with rooms: ' + edge.roomOne + ' and ' + edge.roomTwo, 50, 50);
           }
         }
       );

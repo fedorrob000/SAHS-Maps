@@ -82,7 +82,7 @@ export const EDGES: Edge[] = [
   {roomOne: 'M2U', roomTwo: 'D21U', weight: 1}, // center of main hall to D-Hall-South
   {roomOne: 'D21U', roomTwo: 'M3U', weight: 1}, // D-Hall-South to right of D204
   {roomOne: 'M3U', roomTwo: 'E11U', weight: 1}, // right of D204 to E-Hall-North
-  {roomOne: 'E11U', roomTwo: 'E21U', weight: 1} // E-Hall-North to E-Hall-South
+  {roomOne: 'E11U', roomTwo: 'E21U', weight: 1}, // E-Hall-North to E-Hall-South
 
   // 58 total edges for upstairs
 
@@ -94,8 +94,8 @@ export const EDGES: Edge[] = [
 
 
   // hall A downstairs test
-  // {roomOne: 'A11D', roomTwo: 'A14D', weight: 1}, // main hall to C202
-  // {roomOne: 'A12D', roomTwo: 'A13D', weight: 1}, // main hall to C202
+  {roomOne: 'A11D', roomTwo: 'A14D', weight: 1}, // main hall to C202
+  {roomOne: 'A12D', roomTwo: 'A13D', weight: 1} // main hall to C202
 
   // hall B downstairs test
 
