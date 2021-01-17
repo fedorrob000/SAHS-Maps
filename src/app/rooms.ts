@@ -99,18 +99,35 @@ export const ROOMS: Room[] = [
 
   // For downstairs add 533 to x
 
+  // for bob
+    // subtract 100 to y
+    //add 234 to x
+
   // main hallway downstairs
-  {roomNumber: 'A11D', xPosition: 1350, yPosition: 500},
+  {roomNumber: 'M11D', xPosition: 1348, yPosition: 500}, // beginning of hall A north downstairs
+  {roomNumber: 'M12D', xPosition: 1464, yPosition: 500},
+  {roomNumber: 'M13D', xPosition: 1565, yPosition: 535},
+  {roomNumber: 'M14D', xPosition: 1625, yPosition: 573},
+  {roomNumber: 'M15D', xPosition: 1670, yPosition: 625},
+  {roomNumber: 'M16D', xPosition: 1744, yPosition: 750},
+  {roomNumber: 'M17D', xPosition: 1754, yPosition: 795},
+  {roomNumber: 'M18D', xPosition: 1754, yPosition: 865},
+  {roomNumber: 'M19D', xPosition: 1754, yPosition: 935},
+  {roomNumber: 'M21D', xPosition: 1668, yPosition: 1101},
+  {roomNumber: 'M22D', xPosition: 1615, yPosition: 1152},
+  {roomNumber: 'M23D', xPosition: 1560, yPosition: 1187},
+  {roomNumber: 'M24D', xPosition: 1234, yPosition: 1250},
+  {roomNumber: 'M25D', xPosition: 1120, yPosition: 1360},
 
   // main hallway backside downstairs
 
 
   // hall A north downstairs
-  {roomNumber: 'A14D', xPosition: 1350, yPosition: 100},
+  {roomNumber: 'A14D', xPosition: 1348, yPosition: 100},
 
   // hall A east downstairs
   {roomNumber: 'A12D', xPosition: 817, yPosition: 110},
-  {roomNumber: 'A13D', xPosition: 710, yPosition: 110}
+  {roomNumber: 'A13D', xPosition: 710, yPosition: 110},
 
   // hall B north downstairs
 
@@ -143,5 +160,15 @@ export const ROOMS: Room[] = [
 
 
   // Gymnasium
+  {roomNumber: 'G11D', xPosition: 1120, yPosition: 1445},
+  {roomNumber: 'G12D', xPosition: 1120, yPosition: 1360},
+  {roomNumber: 'G13D', xPosition: 1120, yPosition: 1360},
+  {roomNumber: 'G14D', xPosition: 1120, yPosition: 1360},
+  {roomNumber: 'G15D', xPosition: 1120, yPosition: 1360},
+  {roomNumber: 'G16D', xPosition: 1120, yPosition: 1360},
+  {roomNumber: 'G17D', xPosition: 1120, yPosition: 1360},
+  {roomNumber: 'G18D', xPosition: 1120, yPosition: 1360},
+
+
 
 ];

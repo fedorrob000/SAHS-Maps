@@ -91,11 +91,24 @@ export const EDGES: Edge[] = [
   // index will be used to determine floor
 
   // main hallway downstairs test
-
+  {roomOne: 'M11D', roomTwo: 'M12D', weight: 1}, // main hall A to B108
+  {roomOne: 'M12D', roomTwo: 'M13D', weight: 1}, // main hall A to B108
+  {roomOne: 'M13D', roomTwo: 'M14D', weight: 1}, // main hall A to B108
+  {roomOne: 'M14D', roomTwo: 'M15D', weight: 1}, // main hall A to B108
+  {roomOne: 'M15D', roomTwo: 'M16D', weight: 1}, // main hall A to B108
+  {roomOne: 'M16D', roomTwo: 'M17D', weight: 1}, // main hall A to B108
+  {roomOne: 'M17D', roomTwo: 'M18D', weight: 1}, // main hall A to B108
+  {roomOne: 'M18D', roomTwo: 'M19D', weight: 1}, // main hall A to B108
+  {roomOne: 'M19D', roomTwo: 'M21D', weight: 1}, // main hall A to B108
+  {roomOne: 'M21D', roomTwo: 'M22D', weight: 1}, // main hall A to B108
+  {roomOne: 'M22D', roomTwo: 'M23D', weight: 1}, // main hall A to B108
+  {roomOne: 'M23D', roomTwo: 'M24D', weight: 1}, // main hall A to B108
+  {roomOne: 'M24D', roomTwo: 'M25D', weight: 1}, // main hall A to B108
+  {roomOne: 'M25D', roomTwo: 'M26D', weight: 1}, // main hall A to B108
 
   // hall A downstairs test
-  {roomOne: 'A11D', roomTwo: 'A14D', weight: 1}, // main hall to C202
-  {roomOne: 'A12D', roomTwo: 'A13D', weight: 1} // main hall to C202
+  {roomOne: 'M11D', roomTwo: 'A14D', weight: 1}, // main hall to C202
+  {roomOne: 'A12D', roomTwo: 'A13D', weight: 1}, // main hall to C202
 
   // hall B downstairs test
 
@@ -113,6 +126,12 @@ export const EDGES: Edge[] = [
 
 
   // Gymnasium downstairs test
-
+  {roomOne: 'M26D', roomTwo: 'G11D', weight: 1}, // main hall A to B108
+  {roomOne: 'G11D', roomTwo: 'G12D', weight: 1}, // main hall A to B108
+  {roomOne: 'G12D', roomTwo: 'G13D', weight: 1}, // main hall A to B108
+  {roomOne: 'G13D', roomTwo: 'G14D', weight: 1}, // main hall A to B108
+  {roomOne: 'G14D', roomTwo: 'G15D', weight: 1}, // main hall A to B108
+  {roomOne: 'G15D', roomTwo: 'G16D', weight: 1}, // main hall A to B108
+  {roomOne: 'G16D', roomTwo: 'G17D', weight: 1}, // main hall A to B108
 
 ];

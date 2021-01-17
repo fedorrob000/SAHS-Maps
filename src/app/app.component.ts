@@ -44,7 +44,7 @@ export class AppComponent implements OnInit {
             }
           }
         } else {
-          this.ctx.lineWidth = 5;
+          this.ctx.lineWidth = 9;
           for (let i = 0; i < this.graph.EdgeNumber(); i++) {
             if (i >= 58) {
               this.drawEdge(this.graph.Edges()[i]);
