@@ -8,6 +8,57 @@ export const ROOMS: Room[] = [
   // D for downstairs || U for upstairs
   // EXAMPLE: C23U would be the part of the hall outside C218
 
+  
+
+  //For downstairs add 533 to x
+
+
+  //main hallway downstairs
+  {roomNumber: 'A11D', xPosition: 1350, yPosition: 500},
+
+  //main hallway backside downstairs
+
+
+  //hall A north downstairs
+  {roomNumber: 'A14D', xPosition: 1350, yPosition: 100},
+
+  //hall A east downstairs
+  {roomNumber: 'A12D', xPosition: 817, yPosition: 110},
+  {roomNumber: 'A13D', xPosition: 710, yPosition: 110},
+
+  //hall B north downstairs
+
+
+  //hall C north 1 downstairs
+
+
+  //hall C north 2 downstairs
+
+
+  //hall C east downstairs
+
+
+  //hall D north downstairs
+
+
+  //hall D south downstairs
+
+
+  //hall E north 1 downstairs
+
+
+  //hall E north 2 downstairs
+
+
+  //hall E east downstairs
+
+
+  //hall F downstairs
+
+
+  //Gymnasium
+
+
   //hall C north upstairs
   {roomNumber: 'C11U', xPosition: 110, yPosition: 420},
   {roomNumber: 'C12U', xPosition: 195, yPosition: 361},

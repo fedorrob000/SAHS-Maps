@@ -13,6 +13,7 @@ import {ShortestPath} from "./canvas/ShortestPath";
 })
 export class AppComponent implements OnInit {
   title = 'SAHS Maps';
+  private scale = 1;
 
   @ViewChild('canvas', {static: true})
   canvas: ElementRef<HTMLCanvasElement>;
@@ -28,25 +29,28 @@ export class AppComponent implements OnInit {
     if (this.firstRun) {
       // draw map
       this.ctx = this.canvas.nativeElement.getContext('2d');
-      this.img.src = 'assets/SAHS_MAP_UP.png';
+      //this.img.src = 'assets/SAHS_MAP_UP.png';                      //Sets Default map
+      this.img.src = 'assets/SAHS_MAP.png';
       this.img.onload = () => {
+        this.ctx.scale(this.scale, this.scale);
         this.ctx.drawImage(this.img, 0, 0);
         //draw all edges
-        if (this.firstRun2) {
+       if (this.firstRun2) {
           this.ctx.strokeStyle = '#ff0000';
           this.ctx.lineWidth = 3;
           for (let i = 0; i < this.graph.EdgeNumber(); i++) {
             this.drawEdge(this.graph.Edges()[i]);
           }
           this.firstRun2 = false;
-        }
+       }
         //shortest path stuff
         // const path = new ShortestPath(this.graph);
         // console.log(path.shortestPath(this.roomToID('C11U'), this.roomToID('D24U')));
       };
 
       this.ctx.canvas.width = 2200;
-      this.ctx.canvas.height = 1500;
+      //this.ctx.canvas.height = 1500;                      1500 default for up, 1650 default for down
+      this.ctx.canvas.height = 1650;
       this.ctx.drawImage(this.img, 10, 10);
       this.firstRun = false;
 
@@ -75,8 +79,8 @@ export class AppComponent implements OnInit {
     const room2: Room = this.graph.Vertexs().find(v => v.id === edge.from).value;
 
     this.ctx.beginPath();
-    this.ctx.moveTo(room1.xPosition, room1.yPosition);
-    this.ctx.lineTo(room2.xPosition, room2.yPosition);
+    this.ctx.moveTo(room1.xPosition * this.scale, room1.yPosition * this.scale);
+    this.ctx.lineTo(room2.xPosition * this.scale, room2.yPosition * this.scale);
     this.ctx.stroke();
   }
 
@@ -84,7 +88,7 @@ export class AppComponent implements OnInit {
     return this.graph.Vertexs().find(v => v.value.roomNumber === roomNum).id;
   }
 
-  private switchMapNum = 0;
+  private switchMapNum = 1;
   switchMap(): void {
     if (this.switchMapNum % 2 === 1) {
       // this.ctx.canvas.width = 1400;
@@ -94,7 +98,9 @@ export class AppComponent implements OnInit {
     } else {
       this.ctx.canvas.height = 1650;
       this.img.src = 'assets/SAHS_MAP.png';
+      for (let i = 0; i < this.graph.EdgeNumber(); i++) {
     }
     this.switchMapNum++;
   }
+}
 }
