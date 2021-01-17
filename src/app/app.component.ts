@@ -115,12 +115,14 @@ export class AppComponent implements OnInit {
     // shortest path stuff
     const path = new ShortestPath(this.graph);
     let route: number[] = [];
-    route = path.shortestPath(this.roomToID('C19U'), this.roomToID('E33U'));
+    route = path.shortestPath(this.roomToID('E11U'), this.roomToID('C35U'));
     for (let i = 0; i < route.length - 1; i++) {
       this.ctx.beginPath();
-      this.ctx.moveTo(ROOMS[route[i]].xPosition * this.scale, ROOMS[route[i]].yPosition * this.scale);
-      this.ctx.lineTo(ROOMS[route[i + 1]].xPosition * this.scale, ROOMS[route[i + 1]].yPosition * this.scale);
+      this.ctx.moveTo(ROOMS[route[i]-1].xPosition * this.scale, ROOMS[route[i]-1].yPosition * this.scale);
+      this.ctx.lineTo(ROOMS[route[i + 1]-1].xPosition * this.scale, ROOMS[route[i + 1]-1].yPosition * this.scale);
       this.ctx.stroke();
+      console.log(ROOMS[route[i]]);
+      console.log(ROOMS[route[i + 1]]);
     }
   }
 }
