@@ -51,9 +51,9 @@ export class AppComponent implements OnInit {
             }
           }
         }
-        // shortest path stuff
-        // const path = new ShortestPath(this.graph);
-        // console.log(path.shortestPath(this.roomToID('C19U'), this.roomToID('E34U')));
+        //shortest path stuff
+        const path = new ShortestPath(this.graph);
+        console.log(path.shortestPath(this.roomToID('C19U'), this.roomToID('E33U')));
 
       };
 
