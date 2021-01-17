@@ -86,13 +86,13 @@ export class AppComponent implements OnInit {
   }
 
   drawEdge(edge: GraphEdge<any>): void {
-    const room1: Room = this.graph.Vertexs().find(v => v.id === edge.to).value;
-    const room2: Room = this.graph.Vertexs().find(v => v.id === edge.from).value;
-
-    this.ctx.beginPath();
-    this.ctx.moveTo(room1.xPosition * this.scale, room1.yPosition * this.scale);
-    this.ctx.lineTo(room2.xPosition * this.scale, room2.yPosition * this.scale);
-    this.ctx.stroke();
+    // const room1: Room = this.graph.Vertexs().find(v => v.id === edge.to).value;
+    // const room2: Room = this.graph.Vertexs().find(v => v.id === edge.from).value;
+    //
+    // this.ctx.beginPath();
+    // this.ctx.moveTo(room1.xPosition * this.scale, room1.yPosition * this.scale);
+    // this.ctx.lineTo(room2.xPosition * this.scale, room2.yPosition * this.scale);
+    // this.ctx.stroke();
   }
 
   roomToID(roomNum: string): number {
@@ -108,6 +108,19 @@ export class AppComponent implements OnInit {
       this.ctx.canvas.height = 1500;
       this.img.src = 'assets/SAHS_MAP_UP.png';
       this.currentlySelectedUpstairs = true;
+    }
+  }
+
+  drawLines(): void {
+    // shortest path stuff
+    const path = new ShortestPath(this.graph);
+    let route: number[] = [];
+    route = path.shortestPath(this.roomToID('C19U'), this.roomToID('E33U'));
+    for (let i = 0; i < route.length - 1; i++) {
+      this.ctx.beginPath();
+      this.ctx.moveTo(ROOMS[route[i]].xPosition * this.scale, ROOMS[route[i]].yPosition * this.scale);
+      this.ctx.lineTo(ROOMS[route[i + 1]].xPosition * this.scale, ROOMS[route[i + 1]].yPosition * this.scale);
+      this.ctx.stroke();
     }
   }
 }
