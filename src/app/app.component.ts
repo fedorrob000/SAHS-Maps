@@ -26,14 +26,17 @@ export class AppComponent implements OnInit {
   private firstRun = true;
   private firstRun2 = true;
   ngOnInit(): void {
+    // run only on first load of app ----------------------------------------------------
     if (this.firstRun) {
+
       // draw map
       this.ctx = this.canvas.nativeElement.getContext('2d');
-      //this.img.src = 'assets/SAHS_MAP_UP.png';                      //Sets Default map
       this.img.src = 'assets/SAHS_MAP.png';
+
       this.img.onload = () => {
         this.ctx.scale(this.scale, this.scale);
         this.ctx.drawImage(this.img, 0, 0);
+
         //draw all edges
        if (this.firstRun2) {
           this.ctx.strokeStyle = '#ff0000';
@@ -71,6 +74,7 @@ export class AppComponent implements OnInit {
       );
 
     }
+    // end first run block -------------------------------------------------------------------------------------------------------
 
   }
 
