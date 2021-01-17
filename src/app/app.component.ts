@@ -3,7 +3,7 @@ import {Graph, GraphEdge, GraphVertex} from 'actslib';
 import {Room} from './room';
 import {ROOMS} from './rooms';
 import {EDGES} from './edges';
-import {ShortestPath} from "./canvas/ShortestPath";
+import {ShortestPath} from './canvas/ShortestPath';
 
 
 @Component({
@@ -14,17 +14,14 @@ import {ShortestPath} from "./canvas/ShortestPath";
 export class AppComponent implements OnInit {
   title = 'SAHS Maps';
   private scale = 1;
-
   @ViewChild('canvas', {static: true})
   canvas: ElementRef<HTMLCanvasElement>;
-
   private ctx: CanvasRenderingContext2D;
   private graph = new Graph<Room, number>();
-
   private img = new Image();
-
   private firstRun = true;
-  private firstRun2 = true;
+  private currentlySelectedUpstairs = false;
+
   ngOnInit(): void {
     // run only on first load of app ------------------------------------------------------------------------------
     if (this.firstRun) {
@@ -36,23 +33,27 @@ export class AppComponent implements OnInit {
       this.img.onload = () => {
         this.ctx.scale(this.scale, this.scale);
         this.ctx.drawImage(this.img, 0, 0);
+        this.ctx.strokeStyle = '#ff0000';
+        this.ctx.lineWidth = 10;
 
-        //draw all edges
-       if (this.firstRun2) {
-          this.ctx.strokeStyle = '#ff0000';
-          this.ctx.lineWidth = 3;
+        // draw all edges
+        if (this.currentlySelectedUpstairs) {
+
           for (let i = 0; i < this.graph.EdgeNumber(); i++) {
             this.drawEdge(this.graph.Edges()[i]);
           }
-          this.firstRun2 = false;
-       }
-        //shortest path stuff
+        } else {
+          // for (let i = 0; i < this.graph.EdgeNumber(); i++) {
+          //   this.drawEdge(this.graph.Edges()[i]);
+          // }
+        }
+        // shortest path stuff
         // const path = new ShortestPath(this.graph);
         // console.log(path.shortestPath(this.roomToID('C11U'), this.roomToID('D24U')));
       };
 
       this.ctx.canvas.width = 2200;
-      //this.ctx.canvas.height = 1500;                      1500 default for up, 1650 default for down
+      // this.ctx.canvas.height = 1500;                      1500 default for up, 1650 default for down
       this.ctx.canvas.height = 1650;
       this.ctx.drawImage(this.img, 10, 10);
       this.firstRun = false;
@@ -92,19 +93,15 @@ export class AppComponent implements OnInit {
     return this.graph.Vertexs().find(v => v.value.roomNumber === roomNum).id;
   }
 
-  private switchMapNum = 1;
   switchMap(): void {
-    if (this.switchMapNum % 2 === 1) {
-      // this.ctx.canvas.width = 1400;
-      // this.ctx.canvas.height = 1500;
-      this.ctx.canvas.height = 1500;
-      this.img.src = 'assets/SAHS_MAP_UP.png';
-    } else {
+    if (this.currentlySelectedUpstairs) {
       this.ctx.canvas.height = 1650;
       this.img.src = 'assets/SAHS_MAP.png';
-      for (let i = 0; i < this.graph.EdgeNumber(); i++) {
+      this.currentlySelectedUpstairs = false;
+    } else {
+      this.ctx.canvas.height = 1500;
+      this.img.src = 'assets/SAHS_MAP_UP.png';
+      this.currentlySelectedUpstairs = true;
     }
-    this.switchMapNum++;
   }
-}
 }
