@@ -20,7 +20,7 @@ export const EDGES: Edge[] = [
   {roomOne: 'C18U', roomTwo: 'C28U', weight: 1}, // C211/C212/hallway to C222/hallway/C221/C224
 
   // hall C east upstairs 2 test
-  {roomOne: 'C30U', roomTwo: 'C31U', weight: 1},  // C222/C220 to C230
+  {roomOne: 'C26U', roomTwo: 'C31U', weight: 1},  // C222/C220 to C230
   {roomOne: 'C31U', roomTwo: 'C32U', weight: 1},  // C230 to C232/C235
   {roomOne: 'C32U', roomTwo: 'C33U', weight: 1},  // C232/C235 to C237
   {roomOne: 'C33U', roomTwo: 'C34U', weight: 1},  // C237 to C234
@@ -56,8 +56,8 @@ export const EDGES: Edge[] = [
   {roomOne: 'E27U', roomTwo: 'E28U', weight: 1}, // E223/E224/E225/E226/hallway to stairs
 
   // hall E east upstairs test
-  {roomOne: 'E27U', roomTwo: 'E29U', weight: 1}, // E223/E224/E225/E226/hallway to E209/E210/E211/E212/hallway
-  {roomOne: 'E29U', roomTwo: 'E30U', weight: 1}, // E209/E210/E211/E212/hallway to E230/E232
+  {roomOne: 'E27U', roomTwo: 'E18U', weight: 1}, // E223/E224/E225/E226/hallway to E209/E210/E211/E212/hallway
+  {roomOne: 'E18U', roomTwo: 'E30U', weight: 1}, // E209/E210/E211/E212/hallway to E230/E232
   {roomOne: 'E30U', roomTwo: 'E31U', weight: 1}, // E230/E232 to E235
   {roomOne: 'E31U', roomTwo: 'E32U', weight: 1}, // E235 to E234/E236
   {roomOne: 'E32U', roomTwo: 'E33U', weight: 1}, // E236 to stairwell
