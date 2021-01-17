@@ -34,18 +34,22 @@ export class AppComponent implements OnInit {
         this.ctx.scale(this.scale, this.scale);
         this.ctx.drawImage(this.img, 0, 0);
         this.ctx.strokeStyle = '#ff0000';
-        this.ctx.lineWidth = 10;
 
         // draw all edges
         if (this.currentlySelectedUpstairs) {
-
+          this.ctx.lineWidth = 10;
           for (let i = 0; i < this.graph.EdgeNumber(); i++) {
-            this.drawEdge(this.graph.Edges()[i]);
+            // if (i < 57) {
+              this.drawEdge(this.graph.Edges()[i]);
+            // }
           }
         } else {
-          // for (let i = 0; i < this.graph.EdgeNumber(); i++) {
-          //   this.drawEdge(this.graph.Edges()[i]);
-          // }
+          this.ctx.lineWidth = 5;
+          for (let i = 0; i < this.graph.EdgeNumber(); i++) {
+            // if (i >= 57) {
+              this.drawEdge(this.graph.Edges()[i]);
+            // }
+          }
         }
         // shortest path stuff
         // const path = new ShortestPath(this.graph);
@@ -59,8 +63,7 @@ export class AppComponent implements OnInit {
       this.firstRun = false;
 
       // add all rooms as vertices
-      ROOMS.forEach(room => this.graph.AddVertex(this.graph.Vertexs().length + 1, room));
-      console.log('hello');
+      ROOMS.forEach(room => this.graph.AddVertex(this.graph.Vertexs().length, room));
 
       // add all edges to graph
       EDGES.forEach(edge => {

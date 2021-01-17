@@ -1,31 +1,10 @@
 import {Edge} from './edge';
 
 export const EDGES: Edge[] = [
-  //main hallway downstairs test
 
-
-  //hall A downstairs test
-  //{roomOne: 'A11D', roomTwo: 'A14D', weight: 1}, // main hall to C202
-  //{roomOne: 'A12D', roomTwo: 'A13D', weight: 1}, // main hall to C202
-
-  //hall B downstairs test
-
-
-  //hall C downstairs test
-
-
-  //hall D downstairs test
-
-
-  //hall E downstairs test 
-
-
-  //hall F downstairs test
-
-
-  //Gymnasium downstairs test
-
-  // Comments out upstairs code
+  // --------------- UPSTAIRS --------------------------------------------------------------------
+  // upstairs must be higher in the code
+  // index will be used to determine floor
 
   // hall C north upstairs test
   {roomOne: 'C11U', roomTwo: 'C12U', weight: 1}, // main hall to C202
@@ -105,6 +84,35 @@ export const EDGES: Edge[] = [
   {roomOne: 'M3U', roomTwo: 'E11U', weight: 1}, // right of D204 to E-Hall-North
   {roomOne: 'E11U', roomTwo: 'E21U', weight: 1} // E-Hall-North to E-Hall-South
 
+  // 58 total edges for upstairs
 
-  
+  // --------------- DOWNSTAIRS --------------------------------------------------------------------
+  // downstairs must be lower in the code
+  // index will be used to determine floor
+
+  // main hallway downstairs test
+
+
+  // hall A downstairs test
+  // {roomOne: 'A11D', roomTwo: 'A14D', weight: 1}, // main hall to C202
+  // {roomOne: 'A12D', roomTwo: 'A13D', weight: 1}, // main hall to C202
+
+  // hall B downstairs test
+
+
+  // hall C downstairs test
+
+
+  // hall D downstairs test
+
+
+  // hall E downstairs test
+
+
+  // hall F downstairs test
+
+
+  // Gymnasium downstairs test
+
+
 ];
