@@ -51,9 +51,7 @@ export class AppComponent implements OnInit {
             }
           }
         }
-        // shortest path stuff
-        // const path = new ShortestPath(this.graph);
-        // console.log(path.shortestPath(this.roomToID('C11U'), this.roomToID('D24U')));
+
       };
 
       this.ctx.canvas.width = 2200;
@@ -79,6 +77,10 @@ export class AppComponent implements OnInit {
           }
         }
       );
+
+      // shortest path stuff
+      const path = new ShortestPath(this.graph);
+      console.log(path.shortestPath(this.roomToID('C11U'), this.roomToID('D24U')));
 
     }
     // end first run block -------------------------------------------------------------------------------------------------------
