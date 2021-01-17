@@ -65,12 +65,11 @@ export const ROOMS: Room[] = [
   {roomNumber: 'E28U', xPosition: 600, yPosition: 1413},
 
   // hall E east upstairs
-  {roomNumber: 'E29U', xPosition: 539, yPosition: 1369},
-  {roomNumber: 'E30U', xPosition: 758, yPosition: 1288},
-  {roomNumber: 'E31U', xPosition: 967, yPosition: 1210},
-  {roomNumber: 'E32U', xPosition: 1055, yPosition: 1178},
-  {roomNumber: 'E33U', xPosition: 1147, yPosition: 1143},
-  {roomNumber: 'E34U', xPosition: 1147, yPosition: 1000},
+  {roomNumber: 'E29U', xPosition: 758, yPosition: 1288},
+  {roomNumber: 'E30U', xPosition: 967, yPosition: 1210},
+  {roomNumber: 'E31U', xPosition: 1055, yPosition: 1178},
+  {roomNumber: 'E32U', xPosition: 1147, yPosition: 1143},
+  {roomNumber: 'E33U', xPosition: 1147, yPosition: 1000},
 
   // main hallway upstairs extra points
   {roomNumber: 'M0U', xPosition: 432, yPosition: 739},
