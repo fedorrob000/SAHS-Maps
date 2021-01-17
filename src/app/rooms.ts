@@ -36,7 +36,6 @@ export const ROOMS: Room[] = [
   {roomNumber: 'C29U', xPosition: 818, yPosition: 155}, // 18
 
   // hall C east upstairs
-  {roomNumber: 'C30U', xPosition: 695, yPosition: 243}, // 19
   {roomNumber: 'C31U', xPosition: 900, yPosition: 322}, // 20
   {roomNumber: 'C32U', xPosition: 930, yPosition: 334}, // 21
   {roomNumber: 'C33U', xPosition: 1014, yPosition: 366}, // 22
@@ -65,7 +64,6 @@ export const ROOMS: Room[] = [
   {roomNumber: 'E28U', xPosition: 600, yPosition: 1413}, // 41
 
   // hall E east upstairs
-  {roomNumber: 'E29U', xPosition: 758, yPosition: 1288}, // 42
   {roomNumber: 'E30U', xPosition: 967, yPosition: 1210}, // 43
   {roomNumber: 'E31U', xPosition: 1055, yPosition: 1178}, // 44
   {roomNumber: 'E32U', xPosition: 1147, yPosition: 1143}, // 45

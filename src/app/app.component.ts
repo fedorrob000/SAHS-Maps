@@ -51,9 +51,6 @@ export class AppComponent implements OnInit {
             }
           }
         }
-        // shortest path stuff
-        // const path = new ShortestPath(this.graph);
-        // console.log(path.shortestPath(this.roomToID('C19U'), this.roomToID('E34U')));
 
       };
 
@@ -88,7 +85,7 @@ export class AppComponent implements OnInit {
   drawEdge(edge: GraphEdge<any>): void {
     // const room1: Room = this.graph.Vertexs().find(v => v.id === edge.to).value;
     // const room2: Room = this.graph.Vertexs().find(v => v.id === edge.from).value;
-    //
+    
     // this.ctx.beginPath();
     // this.ctx.moveTo(room1.xPosition * this.scale, room1.yPosition * this.scale);
     // this.ctx.lineTo(room2.xPosition * this.scale, room2.yPosition * this.scale);
@@ -115,7 +112,7 @@ export class AppComponent implements OnInit {
     // shortest path stuff
     const path = new ShortestPath(this.graph);
     let route: number[] = [];
-    route = path.shortestPath(this.roomToID('E11U'), this.roomToID('C35U'));
+    route = path.shortestPath(this.roomToID('E18U'), this.roomToID('C34U'));
     for (let i = 0; i < route.length - 1; i++) {
       this.ctx.beginPath();
       this.ctx.moveTo(ROOMS[route[i]-1].xPosition * this.scale, ROOMS[route[i]-1].yPosition * this.scale);
