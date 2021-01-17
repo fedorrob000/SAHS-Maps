@@ -51,6 +51,9 @@ export class AppComponent implements OnInit {
             }
           }
         }
+        // shortest path stuff
+        // const path = new ShortestPath(this.graph);
+        // console.log(path.shortestPath(this.roomToID('C19U'), this.roomToID('E34U')));
 
       };
 
@@ -77,11 +80,6 @@ export class AppComponent implements OnInit {
           }
         }
       );
-
-      // shortest path stuff
-      const path = new ShortestPath(this.graph);
-      console.log(path.shortestPath(this.roomToID('C11U'), this.roomToID('D24U')));
-
     }
     // end first run block -------------------------------------------------------------------------------------------------------
 
