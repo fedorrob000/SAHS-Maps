@@ -148,8 +148,8 @@ export class ShortestPath {
             if (visited.some(e => e.graphID === edge.to)) {
             } else {
               if (unvisited.some(e => e.graphID === edge.to)) {
-                unvisited = unvisited.filter(obj => obj.graphID !== edge.to);
-                unvisited.push(new GraphContainer(edge.to, currentNode, currentNode.dist + edge.weight));
+                // unvisited = unvisited.filter(obj => obj.graphID !== edge.to);
+                // unvisited.push(new GraphContainer(edge.to, currentNode, currentNode.dist + edge.weight));
               } else {
                 unvisited.push(new GraphContainer(edge.to, currentNode, currentNode.dist + edge.weight));
               }
@@ -158,8 +158,8 @@ export class ShortestPath {
             if (visited.some(e => e.graphID === edge.from)) {
             } else {
               if (unvisited.some(e => e.graphID === edge.from)) {
-                unvisited = unvisited.filter(obj => obj.graphID !== edge.from);
-                unvisited.push(new GraphContainer(edge.from, currentNode, currentNode.dist + edge.weight));
+                // unvisited = unvisited.filter(obj => obj.graphID !== edge.from);
+                // unvisited.push(new GraphContainer(edge.from, currentNode, currentNode.dist + edge.weight));
               } else {
                 unvisited.push(new GraphContainer(edge.from, currentNode, currentNode.dist + edge.weight));
               }
