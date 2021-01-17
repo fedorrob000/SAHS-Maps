@@ -85,7 +85,7 @@ export class AppComponent implements OnInit {
   drawEdge(edge: GraphEdge<any>): void {
     // const room1: Room = this.graph.Vertexs().find(v => v.id === edge.to).value;
     // const room2: Room = this.graph.Vertexs().find(v => v.id === edge.from).value;
-    
+
     // this.ctx.beginPath();
     // this.ctx.moveTo(room1.xPosition * this.scale, room1.yPosition * this.scale);
     // this.ctx.lineTo(room2.xPosition * this.scale, room2.yPosition * this.scale);
@@ -108,15 +108,15 @@ export class AppComponent implements OnInit {
     }
   }
 
-  drawLines(): void {
+  async drawLines(): Promise<void> {
     // shortest path stuff
     const path = new ShortestPath(this.graph);
     let route: number[] = [];
-    route = path.shortestPath(this.roomToID('E18U'), this.roomToID('C34U'));
+    route = await path.shortestPathDEBUG(this.roomToID('E33U'), this.roomToID('C33U'), this.ctx, 500);
     for (let i = 0; i < route.length - 1; i++) {
       this.ctx.beginPath();
-      this.ctx.moveTo(ROOMS[route[i]-1].xPosition * this.scale, ROOMS[route[i]-1].yPosition * this.scale);
-      this.ctx.lineTo(ROOMS[route[i + 1]-1].xPosition * this.scale, ROOMS[route[i + 1]-1].yPosition * this.scale);
+      this.ctx.moveTo(ROOMS[route[i] - 1].xPosition * this.scale, ROOMS[route[i] - 1].yPosition * this.scale);
+      this.ctx.lineTo(ROOMS[route[i + 1] - 1].xPosition * this.scale, ROOMS[route[i + 1] - 1].yPosition * this.scale);
       this.ctx.stroke();
       console.log(ROOMS[route[i]]);
       console.log(ROOMS[route[i + 1]]);

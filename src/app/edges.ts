@@ -52,7 +52,7 @@ export const EDGES: Edge[] = [
   {roomOne: 'E23U', roomTwo: 'E24U', weight: 1}, // E218 to E217
   {roomOne: 'E24U', roomTwo: 'E25U', weight: 1}, // E217 to E220
   {roomOne: 'E25U', roomTwo: 'E26U', weight: 1}, // E220 to E222
-  {roomOne: 'E26U', roomTwo: 'E27U', weight: 1}, // E222 to E223/E224/E225/E226/hallway
+  {roomOne: 'E26U', roomTwo: 'E27U', weight: 15}, // E222 to E223/E224/E225/E226/hallway
   {roomOne: 'E27U', roomTwo: 'E28U', weight: 1}, // E223/E224/E225/E226/hallway to stairs
 
   // hall E east upstairs test
