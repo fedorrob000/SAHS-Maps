@@ -42,14 +42,22 @@ export class AppComponent implements OnInit {
         if (this.currentlySelectedUpstairs) {
           this.ctx.lineWidth = 10;
           for (let i = 0; i < this.graph.EdgeNumber(); i++) {
+<<<<<<< HEAD
             if (i < 57) {
+=======
+            if (i < 58) {
+>>>>>>> 03e904237469c43a5c32cb13cf89221b306d16b0
               this.drawEdge(this.graph.Edges()[i]);
             }
           }
         } else {
           this.ctx.lineWidth = 9;
           for (let i = 0; i < this.graph.EdgeNumber(); i++) {
+<<<<<<< HEAD
             if (i >= 57) {
+=======
+            if (i >= 58) {
+>>>>>>> 03e904237469c43a5c32cb13cf89221b306d16b0
               this.drawEdge(this.graph.Edges()[i]);
             }
           }
