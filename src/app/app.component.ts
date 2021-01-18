@@ -33,7 +33,6 @@ export class AppComponent implements OnInit {
       this.img.src = 'assets/SAHS_MAP.png';
 
       this.img.onload = () => {
-        this.ctx.clearRect(0,0,3000,2000);
         this.ctx.scale(this.scale, this.scale);
         this.ctx.drawImage(this.img, 0, 0);
         this.ctx.strokeStyle = '#ff0000';
@@ -106,7 +105,7 @@ export class AppComponent implements OnInit {
   drawEdge(edge: GraphEdge<any>): void {
     // const room1: Room = this.graph.Vertexs().find(v => v.id === edge.to).value;
     // const room2: Room = this.graph.Vertexs().find(v => v.id === edge.from).value;
-    //
+
     // this.ctx.beginPath();
     // this.ctx.moveTo(room1.xPosition * this.scale, room1.yPosition * this.scale);
     // this.ctx.lineTo(room2.xPosition * this.scale, room2.yPosition * this.scale);
@@ -129,20 +128,23 @@ export class AppComponent implements OnInit {
     }
   }
 
+
   drawLines(start: number, end: number): void {
     // shortest path stuff
-    this.ctx.clearRect(0,0,3000,2000);
-    this.ctx.drawImage(this.img, 0, 0);
     const path = new ShortestPath(this.graph);
     let route: number[] = [];
-    route = path.shortestPath(this.roomToID('E33U'), this.roomToID('C33U'));
+    //route = path.shortestPath(this.roomToID('E33U'), this.roomToID('C33U'));
+    route = path.shortestPath(start,end);
     for (let i = 0; i < route.length - 1; i++) {
-        this.ctx.beginPath();
-        this.ctx.moveTo(ROOMS[route[i] - 1].xPosition * this.scale, ROOMS[route[i] - 1].yPosition * this.scale);
-        this.ctx.lineTo(ROOMS[route[i + 1] - 1].xPosition * this.scale, ROOMS[route[i + 1] - 1].yPosition * this.scale);
-        this.ctx.stroke();
+      this.ctx.beginPath();
+      this.ctx.moveTo(ROOMS[route[i] - 1].xPosition * this.scale, ROOMS[route[i] - 1].yPosition * this.scale);
+      this.ctx.lineTo(ROOMS[route[i + 1] - 1].xPosition * this.scale, ROOMS[route[i + 1] - 1].yPosition * this.scale);
+      this.ctx.stroke();
+      console.log(ROOMS[route[i]]);
+      console.log(ROOMS[route[i + 1]]);
     }
   }
+}
 
   
 /*
@@ -170,7 +172,7 @@ export class AppComponent implements OnInit {
     }
   }
 */
-}
+
 
 // broken paths
 // E11U to C35U
