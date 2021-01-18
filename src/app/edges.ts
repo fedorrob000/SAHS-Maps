@@ -74,7 +74,9 @@ export const EDGES: Edge[] = [
   {roomOne: 'D24U', roomTwo: 'D25U  ', weight: 1}, // above stairs to stairs
 
   // main hall upstairs test
-  {roomOne: 'C11U', roomTwo: 'C21U', weight: 1}, // C-Hall-North to C-Hall-South
+  {roomOne: 'C11U', roomTwo: 'M4U', weight: 1}, // C-Hall-North to C-Hall-South
+  {roomOne: 'M4U', roomTwo: 'S11U', weight: 1}, // Main Hall To Stair C
+  {roomOne: 'M4U', roomTwo: 'C21U', weight: 1}, // C-Hall-North to C-Hall-South
   {roomOne: 'C21U', roomTwo: 'M1U', weight: 1}, // C-Hall-South to right of D206
   {roomOne: 'M1U', roomTwo: 'D11U', weight: 1}, // right of D206 to D-Hall-North
   {roomOne: 'D11U', roomTwo: 'M2U', weight: 1}, // D-Hall-North to center of main hall
@@ -104,6 +106,9 @@ export const EDGES: Edge[] = [
   {roomOne: 'M22D', roomTwo: 'M23D', weight: 1}, // main hall A to B108
   {roomOne: 'M23D', roomTwo: 'M24D', weight: 1}, // main hall A to B108
   {roomOne: 'M24D', roomTwo: 'M25D', weight: 1}, // main hall A to B108
+  {roomOne: 'M14D', roomTwo: 'S11D', weight: 1},
+
+  // {roomOne: 'M25D', roomTwo: 'M26D', weight: 1}, // main hall A to B108
 
   // main hallway backside
   {roomOne: 'C14D', roomTwo: 'C31D', weight: 1}, // main hall A to B108
@@ -159,6 +164,7 @@ export const EDGES: Edge[] = [
   {roomOne: 'D12D', roomTwo: 'D13D', weight: 1}, // main hall to C202
   {roomOne: 'D13D', roomTwo: 'D14D', weight: 1}, // main hall to C202
     // south
+  {roomOne: 'M18D', roomTwo: 'D27D', weight: 1},  
   {roomOne: 'M19D', roomTwo: 'D21D', weight: 1}, // main hall to C202
   {roomOne: 'D21D', roomTwo: 'D22D', weight: 1}, // main hall to C202
   {roomOne: 'D22D', roomTwo: 'D23D', weight: 1}, // main hall to C202
@@ -204,5 +210,8 @@ export const EDGES: Edge[] = [
   {roomOne: 'G11D', roomTwo: 'F103', weight: 1}, // main hall A to B108
   {roomOne: 'F103', roomTwo: 'BOIL', weight: 1}, // main hall A to B108
   {roomOne: 'F103', roomTwo: 'F100', weight: 1}, // main hall A to B108
+
+  // Staircases
+  {roomOne: 'S11D', roomTwo: 'S11U', weight: 1}, // Stair C103 up
 
 ];
