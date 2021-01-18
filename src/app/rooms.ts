@@ -188,6 +188,10 @@ export const ROOMS: Room[] = [
   {roomNumber: 'G21D', xPosition: 540, yPosition: 1520}, // g113, g115
   {roomNumber: 'G22D', xPosition: 540, yPosition: 1590}, // g117
 
+  {roomNumber: 'F103', xPosition: 1120, yPosition: 1460}, //
+  {roomNumber: 'BOIL', xPosition: 1120, yPosition: 1530}, //
+  {roomNumber: 'F100', xPosition: 1120, yPosition: 1580}, //
+
 
 
 ];
