@@ -121,10 +121,10 @@ export const CLASSREFERENCES: ClassReference[] = [
     {RealRoom: 'C124', RefRoom: 'C18D'},
 
     //D Rooms
-    {RealRoom: 'D100', RefRoom: 'D18D'},        //Fix
-    {RealRoom: 'D101', RefRoom: 'D18D'},        //Fix
+    {RealRoom: 'D100', RefRoom: 'D27D'},        
+    {RealRoom: 'D101', RefRoom: 'D27D'},        
     {RealRoom: 'D102', RefRoom: 'D11D'},
-    {RealRoom: 'D103', RefRoom: 'D18D'},        //Fix
+    {RealRoom: 'D103', RefRoom: 'M18D'},        
     {RealRoom: 'D106', RefRoom: 'D12D'},
     {RealRoom: 'D108', RefRoom: 'D13D'},
     {RealRoom: 'D109', RefRoom: 'D13D'},

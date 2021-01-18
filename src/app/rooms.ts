@@ -74,6 +74,7 @@ export const ROOMS: Room[] = [
   {roomNumber: 'M1U', xPosition: 464, yPosition: 628}, // 48
   {roomNumber: 'M2U', xPosition: 494, yPosition: 739}, // 49
   {roomNumber: 'M3U', xPosition: 464, yPosition: 860}, // 50
+  {roomNumber: 'M4U', xPosition: 230, yPosition: 465}, // 50
 
   // north D hallway upstairs
   {roomNumber: 'D11U', xPosition: 490, yPosition: 675}, // 51
@@ -150,6 +151,7 @@ export const ROOMS: Room[] = [
   {roomNumber: 'D24D', xPosition: 1945, yPosition: 933}, // D130
   {roomNumber: 'D25D', xPosition: 1980, yPosition: 933}, // D129
   {roomNumber: 'D26D', xPosition: 2060, yPosition: 933}, // hall D134
+  {roomNumber: 'D27D', xPosition: 1690, yPosition: 864}, // Main Entrance D100/D101
 
   // hall E north downstairs
   {roomNumber: 'E11D', xPosition: 1704, yPosition: 1157}, // E102
@@ -198,6 +200,9 @@ export const ROOMS: Room[] = [
   {roomNumber: 'BOIL', xPosition: 1120, yPosition: 1530}, //
   {roomNumber: 'F100', xPosition: 1120, yPosition: 1580}, //
 
+  // Staircases Downstairs
+  {roomNumber: 'S11D', xPosition: 1650, yPosition: 530}, // C Wing Stairs
 
-
+  // Staircases Upstairs
+  {roomNumber: 'S11U', xPosition: 275, yPosition: 425}, // C Wing Stairs
 ];
