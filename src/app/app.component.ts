@@ -1,8 +1,10 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {NgForm} from '@angular/forms';
 import {Graph, GraphEdge, GraphVertex} from 'actslib';
 import {Room} from './room';
 import {ROOMS} from './rooms';
 import {EDGES} from './edges';
+import {CLASSREFERENCES} from './classreferences'
 import {ShortestPath} from './canvas/ShortestPath';
 
 
@@ -82,6 +84,15 @@ export class AppComponent implements OnInit {
 
   }
 
+  onSubmit(form: NgForm, StartID: number, EndID: number) {
+    console.log('Your form data : ', form.value);
+  }
+
+  formToID(room: string) {
+    console.log('Passed string: ' + room)
+
+  }
+
   drawEdge(edge: GraphEdge<any>): void {
     // const room1: Room = this.graph.Vertexs().find(v => v.id === edge.to).value;
     // const room2: Room = this.graph.Vertexs().find(v => v.id === edge.from).value;
@@ -108,11 +119,13 @@ export class AppComponent implements OnInit {
     }
   }
 
-  async drawLines(): Promise<void> {
+
+  async drawLines(start: number, end: number): Promise<void> {
     // shortest path stuff
     const path = new ShortestPath(this.graph);
     let route: number[] = [];
-    route = await path.shortestPathDEBUG(this.roomToID('E33U'), this.roomToID('C33U'), this.ctx, 500);
+    //route = path.shortestPath(this.roomToID('E33U'), this.roomToID('C33U'));
+    route = path.shortestPath(start,end);
     for (let i = 0; i < route.length - 1; i++) {
       this.ctx.beginPath();
       this.ctx.moveTo(ROOMS[route[i] - 1].xPosition * this.scale, ROOMS[route[i] - 1].yPosition * this.scale);
