@@ -97,7 +97,7 @@ export const ROOMS: Room[] = [
   // main hallway downstairs
   {roomNumber: 'M11D', xPosition: 1348, yPosition: 500}, // beginning of hall A north downstairs
   {roomNumber: 'M12D', xPosition: 1464, yPosition: 500}, // B108
-  {roomNumber: 'M13D', xPosition: 1565, yPosition: 535}, // Chall north
+  {roomNumber: 'M13D', xPosition: 1560, yPosition: 535}, // Chall north
   {roomNumber: 'M14D', xPosition: 1625, yPosition: 573}, // stair/c100
   {roomNumber: 'M15D', xPosition: 1670, yPosition: 625}, // C hall South
   {roomNumber: 'M16D', xPosition: 1744, yPosition: 750}, // D101
@@ -122,6 +122,12 @@ export const ROOMS: Room[] = [
 
 
   // hall C north 1 downstairs
+  {roomNumber: 'C11D', xPosition: 1615, yPosition: 455}, // c102, c103
+  {roomNumber: 'C12D', xPosition: 1661, yPosition: 386}, // c105, c104
+  {roomNumber: 'C13D', xPosition: 1732, yPosition: 285}, // hall
+  {roomNumber: 'C14D', xPosition: 1742, yPosition: 270}, // hall, c108,
+  {roomNumber: 'C15D', xPosition: 1767, yPosition: 232}, // c110
+  {roomNumber: 'C16D', xPosition: 1810, yPosition: 170}, // stair, c109
 
 
   // hall C north 2 downstairs
