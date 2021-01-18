@@ -33,26 +33,27 @@ export class AppComponent implements OnInit {
       this.img.src = 'assets/SAHS_MAP.png';
 
       this.img.onload = () => {
+        this.ctx.clearRect(0,0,3000,2000);
         this.ctx.scale(this.scale, this.scale);
         this.ctx.drawImage(this.img, 0, 0);
         this.ctx.strokeStyle = '#ff0000';
 
-        // draw all edges
-        if (this.currentlySelectedUpstairs) {
-          this.ctx.lineWidth = 10;
-          for (let i = 0; i < this.graph.EdgeNumber(); i++) {
-            if (i < 58) {
-              this.drawEdge(this.graph.Edges()[i]);
-            }
-          }
-        } else {
-          this.ctx.lineWidth = 9;
-          for (let i = 0; i < this.graph.EdgeNumber(); i++) {
-            if (i >= 58) {
-              this.drawEdge(this.graph.Edges()[i]);
-            }
-          }
-        }
+        // // draw all edges
+        // if (this.currentlySelectedUpstairs) {
+        //   this.ctx.lineWidth = 10;
+        //   for (let i = 0; i < this.graph.EdgeNumber(); i++) {
+        //     if (i < 58) {
+        //       this.drawEdge(this.graph.Edges()[i]);
+        //     }
+        //   }
+        // } else {
+        //   this.ctx.lineWidth = 9;
+        //   for (let i = 0; i < this.graph.EdgeNumber(); i++) {
+        //     if (i >= 58) {
+        //       this.drawEdge(this.graph.Edges()[i]);
+        //     }
+        //   }
+        // }
 
       };
 
@@ -97,7 +98,7 @@ export class AppComponent implements OnInit {
       if (room == CLASSREFERENCES[i].RealRoom)
       {
         return this.roomToID(CLASSREFERENCES[i].RefRoom)
-      } 
+      }
       // Add error if room doesn't exist
     }
   }
@@ -128,12 +129,11 @@ export class AppComponent implements OnInit {
     }
   }
 
-
   drawLines(start: number, end: number): void {
     // shortest path stuff
+    this.ctx.drawImage(this.img, 0, 0);
     const path = new ShortestPath(this.graph);
     let route: number[] = [];
-    //route = path.shortestPath(this.roomToID('E33U'), this.roomToID('C33U'));
     route = path.shortestPath(start,end);
     for (let i = 0; i < route.length - 1; i++) {
       this.ctx.beginPath();
@@ -146,7 +146,7 @@ export class AppComponent implements OnInit {
   }
 }
 
-  
+
 /*
   RANDOM ROOM CONNECTOR
   drawLines(): void {
