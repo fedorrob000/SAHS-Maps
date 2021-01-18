@@ -104,14 +104,39 @@ export const EDGES: Edge[] = [
   {roomOne: 'M22D', roomTwo: 'M23D', weight: 1}, // main hall A to B108
   {roomOne: 'M23D', roomTwo: 'M24D', weight: 1}, // main hall A to B108
   {roomOne: 'M24D', roomTwo: 'M25D', weight: 1}, // main hall A to B108
-  // {roomOne: 'M25D', roomTwo: 'M26D', weight: 1}, // main hall A to B108
+
+  // main hallway backside
+  {roomOne: 'C14D', roomTwo: 'C31D', weight: 1}, // main hall A to B108
+  {roomOne: 'C31D', roomTwo: 'C23D', weight: 1}, // main hall A to B108
+  {roomOne: 'C23D', roomTwo: 'C32D', weight: 1}, // main hall A to B108
+  {roomOne: 'C32D', roomTwo: 'C33D', weight: 1}, // main hall A to B108
+  {roomOne: 'C33D', roomTwo: 'C34D', weight: 1}, // main hall A to B108
+  {roomOne: 'C34D', roomTwo: 'C35D', weight: 1}, // main hall A to B108
+  {roomOne: 'C35D', roomTwo: 'D14D', weight: 1}, // main hall A to B108
+  {roomOne: 'D14D', roomTwo: 'C36D', weight: 1}, // main hall A to B108
+  {roomOne: 'C36D', roomTwo: 'D26D', weight: 1}, // main hall A to B108
+  {roomOne: 'D26D', roomTwo: 'C37D', weight: 1}, // main hall A to B108
+  {roomOne: 'C37D', roomTwo: 'C38D', weight: 1}, // main hall A to B108
+  {roomOne: 'C38D', roomTwo: 'C39D', weight: 1}, // main hall A to B108
+  {roomOne: 'C39D', roomTwo: 'C41D', weight: 1}, // main hall A to B108
+  {roomOne: 'C41D', roomTwo: 'C42D', weight: 1}, // main hall A to B108
+  {roomOne: 'C42D', roomTwo: 'E16D', weight: 1}, // main hall A to B108
 
   // hall A downstairs test
-  {roomOne: 'M11D', roomTwo: 'A14D', weight: 1}, // main hall to C202
-  // {roomOne: 'A12D', roomTwo: 'A13D', weight: 1}, // main hall to C202
+  {roomOne: 'A11D', roomTwo: 'A12D', weight: 1}, // main hall to C202
+  {roomOne: 'A12D', roomTwo: 'A13D', weight: 1}, // main hall to C202
+  {roomOne: 'A13D', roomTwo: 'B13D', weight: 1}, // main hall to C202
 
   // hall B downstairs test
+  {roomOne: 'M11D', roomTwo: 'B11D', weight: 1}, // main hall to C202
+  {roomOne: 'B11D', roomTwo: 'B12D', weight: 1}, // main hall to C202
+  {roomOne: 'B12D', roomTwo: 'B13D', weight: 1}, // main hall to C202
+  {roomOne: 'B13D', roomTwo: 'B14D', weight: 1}, // main hall to C202
 
+  {roomOne: 'A13D', roomTwo: 'B21D', weight: 1}, // main hall to C202
+  {roomOne: 'B21D', roomTwo: 'B22D', weight: 1}, // main hall to C202
+  {roomOne: 'B22D', roomTwo: 'B23D', weight: 1}, // main hall to C202
+  {roomOne: 'B23D', roomTwo: 'C13D', weight: 1}, // main hall to C202
 
   // hall C downstairs test
   {roomOne: 'M13D', roomTwo: 'C11D', weight: 1}, //
@@ -120,6 +145,12 @@ export const EDGES: Edge[] = [
   {roomOne: 'C13D', roomTwo: 'C14D', weight: 1}, //
   {roomOne: 'C14D', roomTwo: 'C15D', weight: 1}, //
   {roomOne: 'C15D', roomTwo: 'C16D', weight: 1}, //
+
+  {roomOne: 'M15D', roomTwo: 'C21D', weight: 1}, //
+  {roomOne: 'C21D', roomTwo: 'C22D', weight: 1}, //
+  {roomOne: 'C22D', roomTwo: 'C23D', weight: 1}, //
+  {roomOne: 'C23D', roomTwo: 'C24D', weight: 1}, //
+  {roomOne: 'C24D', roomTwo: 'C25D', weight: 1}, //
 
   // hall D downstairs test
     // north
@@ -135,7 +166,6 @@ export const EDGES: Edge[] = [
   {roomOne: 'D24D', roomTwo: 'D25D', weight: 1}, // main hall to C202
   {roomOne: 'D25D', roomTwo: 'D26D', weight: 1}, // main hall to C202
 
-
   // hall E downstairs test
     // north
   {roomOne: 'M21D', roomTwo: 'E11D', weight: 1}, //
@@ -147,6 +177,7 @@ export const EDGES: Edge[] = [
   {roomOne: 'E16D', roomTwo: 'E17D', weight: 1}, //
     // south
   {roomOne: 'M23D', roomTwo: 'E21D', weight: 1}, //
+  {roomOne: 'E21D', roomTwo: 'E22D', weight: 1}, //
   {roomOne: 'E22D', roomTwo: 'E23D', weight: 1}, //
   {roomOne: 'E23D', roomTwo: 'E24D', weight: 1}, //
   {roomOne: 'E24D', roomTwo: 'E25D', weight: 1}, //
@@ -154,9 +185,8 @@ export const EDGES: Edge[] = [
   {roomOne: 'E26D', roomTwo: 'E27D', weight: 1}, //
   {roomOne: 'E27D', roomTwo: 'E28D', weight: 1}, //
   {roomOne: 'E28D', roomTwo: 'E29D', weight: 1}, //
-  {roomOne: 'M23D', roomTwo: 'E29D', weight: 1}, //
-  // hall F downstairs test
-
+    // connect
+  {roomOne: 'E28D', roomTwo: 'E16D', weight: 1}, //
 
   // Gymnasium downstairs test
   {roomOne: 'M25D', roomTwo: 'G11D', weight: 1}, // main hall A to B108
