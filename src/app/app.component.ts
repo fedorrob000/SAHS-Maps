@@ -86,11 +86,20 @@ export class AppComponent implements OnInit {
 
   onSubmit(form: NgForm, StartID: number, EndID: number) {
     console.log('Your form data : ', form.value);
+    StartID = this.formToID(form.value.start);
+    EndID = this.formToID(form.value.end);
+    this.drawLines(StartID,EndID);
   }
 
-  formToID(room: string) {
-    console.log('Passed string: ' + room)
-
+  formToID(room: string): number{
+    for (let i = 0; i < CLASSREFERENCES.length; i++)
+    {
+      if (room == CLASSREFERENCES[i].RealRoom)
+      {
+        return this.roomToID(CLASSREFERENCES[i].RefRoom)
+      } 
+      // Add error if room doesn't exist
+    }
   }
 
   drawEdge(edge: GraphEdge<any>): void {
