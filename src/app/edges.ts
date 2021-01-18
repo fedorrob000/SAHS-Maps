@@ -140,9 +140,16 @@ export const EDGES: Edge[] = [
   {roomOne: 'E14D', roomTwo: 'E15D', weight: 1}, //
   {roomOne: 'E15D', roomTwo: 'E16D', weight: 1}, //
   {roomOne: 'E16D', roomTwo: 'E17D', weight: 1}, //
-
-  // south
-
+    // south
+  {roomOne: 'M23D', roomTwo: 'E21D', weight: 1}, //
+  {roomOne: 'E22D', roomTwo: 'E23D', weight: 1}, //
+  {roomOne: 'E23D', roomTwo: 'E24D', weight: 1}, //
+  {roomOne: 'E24D', roomTwo: 'E25D', weight: 1}, //
+  {roomOne: 'E25D', roomTwo: 'E26D', weight: 1}, //
+  {roomOne: 'E26D', roomTwo: 'E27D', weight: 1}, //
+  {roomOne: 'E27D', roomTwo: 'E28D', weight: 1}, //
+  {roomOne: 'E28D', roomTwo: 'E29D', weight: 1}, //
+  {roomOne: 'M23D', roomTwo: 'E29D', weight: 1}, //
   // hall F downstairs test
 
 
@@ -155,5 +162,9 @@ export const EDGES: Edge[] = [
   {roomOne: 'G15D', roomTwo: 'G16D', weight: 1}, // main hall A to B108
   {roomOne: 'G16D', roomTwo: 'G17D', weight: 1}, // main hall A to B108
   {roomOne: 'G17D', roomTwo: 'G18D', weight: 1}, // main hall A to B108
+
+  {roomOne: 'G17D', roomTwo: 'G21D', weight: 1}, // main hall A to B108
+  {roomOne: 'G21D', roomTwo: 'G22D', weight: 1}, // main hall A to B108
+
 
 ];
