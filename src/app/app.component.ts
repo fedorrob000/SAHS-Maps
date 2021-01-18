@@ -134,7 +134,7 @@ export class AppComponent implements OnInit {
     this.ctx.drawImage(this.img, 0, 0);
     const path = new ShortestPath(this.graph);
     let route: number[] = [];
-    route = path.shortestPath(start,end);
+    route = path.shortestPath(start, end);
     for (let i = 0; i < route.length - 1; i++) {
       this.ctx.beginPath();
       this.ctx.moveTo(ROOMS[route[i] - 1].xPosition * this.scale, ROOMS[route[i] - 1].yPosition * this.scale);
