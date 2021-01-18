@@ -38,22 +38,22 @@ export class AppComponent implements OnInit {
         this.ctx.drawImage(this.img, 0, 0);
         this.ctx.strokeStyle = '#ff0000';
 
-        // // draw all edges
-        // if (this.currentlySelectedUpstairs) {
-        //   this.ctx.lineWidth = 10;
-        //   for (let i = 0; i < this.graph.EdgeNumber(); i++) {
-        //     if (i < 58) {
-        //       this.drawEdge(this.graph.Edges()[i]);
-        //     }
-        //   }
-        // } else {
-        //   this.ctx.lineWidth = 9;
-        //   for (let i = 0; i < this.graph.EdgeNumber(); i++) {
-        //     if (i >= 58) {
-        //       this.drawEdge(this.graph.Edges()[i]);
-        //     }
-        //   }
-        // }
+        // draw all edges
+        if (this.currentlySelectedUpstairs) {
+          this.ctx.lineWidth = 10;
+          for (let i = 0; i < this.graph.EdgeNumber(); i++) {
+            if (i < 57) {
+              this.drawEdge(this.graph.Edges()[i]);
+            }
+          }
+        } else {
+          this.ctx.lineWidth = 9;
+          for (let i = 0; i < this.graph.EdgeNumber(); i++) {
+            if (i >= 57) {
+              this.drawEdge(this.graph.Edges()[i]);
+            }
+          }
+        }
 
       };
 
@@ -104,13 +104,13 @@ export class AppComponent implements OnInit {
   }
 
   drawEdge(edge: GraphEdge<any>): void {
-    // const room1: Room = this.graph.Vertexs().find(v => v.id === edge.to).value;
-    // const room2: Room = this.graph.Vertexs().find(v => v.id === edge.from).value;
+    const room1: Room = this.graph.Vertexs().find(v => v.id === edge.to).value;
+    const room2: Room = this.graph.Vertexs().find(v => v.id === edge.from).value;
 
-    // this.ctx.beginPath();
-    // this.ctx.moveTo(room1.xPosition * this.scale, room1.yPosition * this.scale);
-    // this.ctx.lineTo(room2.xPosition * this.scale, room2.yPosition * this.scale);
-    // this.ctx.stroke();
+    this.ctx.beginPath();
+    this.ctx.moveTo(room1.xPosition * this.scale, room1.yPosition * this.scale);
+    this.ctx.lineTo(room2.xPosition * this.scale, room2.yPosition * this.scale);
+    this.ctx.stroke();
   }
 
   roomToID(roomNum: string): number {

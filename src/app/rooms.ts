@@ -96,19 +96,19 @@ export const ROOMS: Room[] = [
 
   // main hallway downstairs
   {roomNumber: 'M11D', xPosition: 1348, yPosition: 500}, // beginning of hall A north downstairs
-  {roomNumber: 'M12D', xPosition: 1464, yPosition: 500},
-  {roomNumber: 'M13D', xPosition: 1565, yPosition: 535},
-  {roomNumber: 'M14D', xPosition: 1625, yPosition: 573},
-  {roomNumber: 'M15D', xPosition: 1670, yPosition: 625},
-  {roomNumber: 'M16D', xPosition: 1744, yPosition: 750},
+  {roomNumber: 'M12D', xPosition: 1464, yPosition: 500}, // B108
+  {roomNumber: 'M13D', xPosition: 1565, yPosition: 535}, // Chall north
+  {roomNumber: 'M14D', xPosition: 1625, yPosition: 573}, // stair/c100
+  {roomNumber: 'M15D', xPosition: 1670, yPosition: 625}, // C hall South
+  {roomNumber: 'M16D', xPosition: 1744, yPosition: 750}, // D101
   {roomNumber: 'M17D', xPosition: 1754, yPosition: 795}, // Hall D north
-  {roomNumber: 'M18D', xPosition: 1754, yPosition: 865},
+  {roomNumber: 'M18D', xPosition: 1754, yPosition: 865}, // Main entrance/ stair/ d103
   {roomNumber: 'M19D', xPosition: 1754, yPosition: 933}, // hall D south
   {roomNumber: 'M21D', xPosition: 1668, yPosition: 1101}, // Hall E North
-  {roomNumber: 'M22D', xPosition: 1615, yPosition: 1152},
-  {roomNumber: 'M23D', xPosition: 1560, yPosition: 1187},
-  {roomNumber: 'M24D', xPosition: 1234, yPosition: 1250},
-  {roomNumber: 'M25D', xPosition: 1120, yPosition: 1360},
+  {roomNumber: 'M22D', xPosition: 1615, yPosition: 1152}, // stair/ white pony
+  {roomNumber: 'M23D', xPosition: 1560, yPosition: 1187}, // E south hall
+  {roomNumber: 'M24D', xPosition: 1234, yPosition: 1250}, // cadeteria
+  {roomNumber: 'M25D', xPosition: 1120, yPosition: 1360}, // unimportant
 
   // main hallway backside downstairs
 
@@ -117,8 +117,6 @@ export const ROOMS: Room[] = [
   {roomNumber: 'A14D', xPosition: 1348, yPosition: 100},
 
   // hall A east downstairs
-  {roomNumber: 'A12D', xPosition: 817, yPosition: 110},
-  {roomNumber: 'A13D', xPosition: 710, yPosition: 110},
 
   // hall B north downstairs
 
@@ -133,27 +131,29 @@ export const ROOMS: Room[] = [
 
 
   // hall D north downstairs
-  {roomNumber: 'D11D', xPosition: 1825, yPosition: 795}, // Hall D north
-  {roomNumber: 'D12D', xPosition: 1860, yPosition: 795}, // Hall D north
+  {roomNumber: 'D11D', xPosition: 1825, yPosition: 795}, // D102
+  {roomNumber: 'D12D', xPosition: 1860, yPosition: 795}, // D106
   {roomNumber: 'D13D', xPosition: 1980, yPosition: 795}, // 108, 109, 112
-  {roomNumber: 'D14D', xPosition: 2060, yPosition: 795}, // Hall D north
+  {roomNumber: 'D14D', xPosition: 2060, yPosition: 795}, // hall D114
 
 
   // hall D south downstairs
-  {roomNumber: 'D21D', xPosition: 1825, yPosition: 933}, // Hall D north
-  {roomNumber: 'D22D', xPosition: 1885, yPosition: 933}, // Hall D north
-  {roomNumber: 'D23D', xPosition: 1910, yPosition: 933}, // 108, 109, 112
-  {roomNumber: 'D24D', xPosition: 1945, yPosition: 933}, // Hall D north
-  {roomNumber: 'D25D', xPosition: 2060, yPosition: 933}, // Hall D north
+  {roomNumber: 'D21D', xPosition: 1825, yPosition: 933}, // D124
+  {roomNumber: 'D22D', xPosition: 1885, yPosition: 933}, // D126
+  {roomNumber: 'D23D', xPosition: 1910, yPosition: 933}, // next to stairs, D125
+  {roomNumber: 'D24D', xPosition: 1945, yPosition: 933}, // D130
+  {roomNumber: 'D25D', xPosition: 1980, yPosition: 933}, // D129
+  {roomNumber: 'D26D', xPosition: 2060, yPosition: 933}, // hall D134
 
   // hall E north downstairs
-  {roomNumber: 'E11D', xPosition: 1668, yPosition: 1101}, //
-  {roomNumber: 'E12D', xPosition: 2060, yPosition: 933}, //
-  {roomNumber: 'E13D', xPosition: 2060, yPosition: 933}, //
-  {roomNumber: 'E14D', xPosition: 2060, yPosition: 933}, //
-  {roomNumber: 'E15D', xPosition: 2060, yPosition: 933}, //
-  {roomNumber: 'E16D', xPosition: 1668, yPosition: 1101}, //
-  {roomNumber: 'E17D', xPosition: 1890, yPosition: 1425}, //
+  {roomNumber: 'E11D', xPosition: 1704, yPosition: 1157}, // E102
+  {roomNumber: 'E12D', xPosition: 1730, yPosition: 1193}, // E104
+  {roomNumber: 'E13D', xPosition: 1779, yPosition: 1265}, // E105
+  {roomNumber: 'E14D', xPosition: 1790, yPosition: 1280}, // E106/E108
+  {roomNumber: 'E15D', xPosition: 1844, yPosition: 1360}, // E110/E111
+  {roomNumber: 'E16D', xPosition: 1890, yPosition: 1425}, // hall
+  {roomNumber: 'E17D', xPosition: 1915, yPosition: 1460}, // stairs
+
 
 
 
@@ -167,14 +167,14 @@ export const ROOMS: Room[] = [
 
 
   // Gymnasium
-  {roomNumber: 'G11D', xPosition: 1120, yPosition: 1442},
-  {roomNumber: 'G12D', xPosition: 1025, yPosition: 1442},
-  {roomNumber: 'G13D', xPosition: 865, yPosition: 1442},
-  {roomNumber: 'G14D', xPosition: 745, yPosition: 1442},
-  {roomNumber: 'G15D', xPosition: 630, yPosition: 1442},
-  {roomNumber: 'G16D', xPosition: 590, yPosition: 1442},
-  {roomNumber: 'G17D', xPosition: 540, yPosition: 1442},
-  {roomNumber: 'G18D', xPosition: 350, yPosition: 1442},
+  {roomNumber: 'G11D', xPosition: 1120, yPosition: 1442}, // start of g hall
+  {roomNumber: 'G12D', xPosition: 1025, yPosition: 1442}, // g101
+  {roomNumber: 'G13D', xPosition: 865, yPosition: 1442}, // g001, g002, g003, g004, g103, g105
+  {roomNumber: 'G14D', xPosition: 745, yPosition: 1442}, // g107, g109
+  {roomNumber: 'G15D', xPosition: 630, yPosition: 1442}, // g111
+  {roomNumber: 'G16D', xPosition: 590, yPosition: 1442}, // g118, g116
+  {roomNumber: 'G17D', xPosition: 540, yPosition: 1442}, // hall
+  {roomNumber: 'G18D', xPosition: 350, yPosition: 1442}, //g119, g120
 
 
 
