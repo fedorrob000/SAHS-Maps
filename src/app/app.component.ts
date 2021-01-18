@@ -38,22 +38,22 @@ export class AppComponent implements OnInit {
         this.ctx.drawImage(this.img, 0, 0);
         this.ctx.strokeStyle = '#ff0000';
 
-        // // draw all edges
-        // if (this.currentlySelectedUpstairs) {
-        //   this.ctx.lineWidth = 10;
-        //   for (let i = 0; i < this.graph.EdgeNumber(); i++) {
-        //     if (i < 58) {
-        //       this.drawEdge(this.graph.Edges()[i]);
-        //     }
-        //   }
-        // } else {
-        //   this.ctx.lineWidth = 9;
-        //   for (let i = 0; i < this.graph.EdgeNumber(); i++) {
-        //     if (i >= 58) {
-        //       this.drawEdge(this.graph.Edges()[i]);
-        //     }
-        //   }
-        // }
+        // draw all edges
+        if (this.currentlySelectedUpstairs) {
+          this.ctx.lineWidth = 10;
+          for (let i = 0; i < this.graph.EdgeNumber(); i++) {
+            if (i < 58) {
+              this.drawEdge(this.graph.Edges()[i]);
+            }
+          }
+        } else {
+          this.ctx.lineWidth = 9;
+          for (let i = 0; i < this.graph.EdgeNumber(); i++) {
+            if (i >= 58) {
+              this.drawEdge(this.graph.Edges()[i]);
+            }
+          }
+        }
 
       };
 
