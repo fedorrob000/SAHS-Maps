@@ -84,7 +84,7 @@ export const EDGES: Edge[] = [
   {roomOne: 'M3U', roomTwo: 'E11U', weight: 1}, // right of D204 to E-Hall-North
   {roomOne: 'E11U', roomTwo: 'E21U', weight: 1}, // E-Hall-North to E-Hall-South
 
-  // 58 total edges for upstairs
+  // 57 total edges for upstairs
 
   // --------------- DOWNSTAIRS --------------------------------------------------------------------
   // downstairs must be lower in the code
