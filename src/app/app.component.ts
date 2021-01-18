@@ -129,7 +129,7 @@ export class AppComponent implements OnInit {
   }
 
 
-  async drawLines(start: number, end: number): Promise<void> {
+  drawLines(start: number, end: number): void {
     // shortest path stuff
     const path = new ShortestPath(this.graph);
     let route: number[] = [];
