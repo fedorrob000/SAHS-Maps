@@ -121,23 +121,23 @@ export const CLASSREFERENCES: ClassReference[] = [
     {RealRoom: 'C124', RefRoom: 'C18D'},
 
     //D Rooms
-    {RealRoom: 'D100', RefRoom: 'D18D'},
-    {RealRoom: 'D101', RefRoom: 'D18D'},
-    {RealRoom: 'D102', RefRoom: 'D18D'},
-    {RealRoom: 'D103', RefRoom: 'D18D'},
-    {RealRoom: 'D106', RefRoom: 'D18D'},
-    {RealRoom: 'D108', RefRoom: 'D18D'},
-    {RealRoom: 'D109', RefRoom: 'D18D'},
-    {RealRoom: 'D112', RefRoom: 'D18D'},
-    {RealRoom: 'D114', RefRoom: 'D18D'},
-    {RealRoom: 'D124', RefRoom: 'D18D'},
-    {RealRoom: 'D125', RefRoom: 'D18D'},
-    {RealRoom: 'D126', RefRoom: 'D18D'},
-    {RealRoom: 'D129', RefRoom: 'D18D'},
-    {RealRoom: 'D130', RefRoom: 'D18D'},
-    {RealRoom: 'D132', RefRoom: 'D18D'},
-    {RealRoom: 'D134', RefRoom: 'D18D'},
-    {RealRoom: 'D136', RefRoom: 'D18D'},
+    {RealRoom: 'D100', RefRoom: 'D18D'},        //Fix
+    {RealRoom: 'D101', RefRoom: 'D18D'},        //Fix
+    {RealRoom: 'D102', RefRoom: 'D11D'},
+    {RealRoom: 'D103', RefRoom: 'D18D'},        //Fix
+    {RealRoom: 'D106', RefRoom: 'D12D'},
+    {RealRoom: 'D108', RefRoom: 'D13D'},
+    {RealRoom: 'D109', RefRoom: 'D13D'},
+    {RealRoom: 'D112', RefRoom: 'D13D'},
+    {RealRoom: 'D114', RefRoom: 'D14D'},
+    {RealRoom: 'D124', RefRoom: 'D21D'},
+    {RealRoom: 'D125', RefRoom: 'D23D'},
+    {RealRoom: 'D126', RefRoom: 'D22D'},
+    {RealRoom: 'D129', RefRoom: 'D25D'},
+    {RealRoom: 'D130', RefRoom: 'D24D'},
+    {RealRoom: 'D132', RefRoom: 'D26D'},
+    {RealRoom: 'D134', RefRoom: 'D26D'},
+    {RealRoom: 'D136', RefRoom: 'D26D'},        //Fix
 
     //E Rooms
     {RealRoom: 'E100', RefRoom: 'E18D'},
@@ -170,26 +170,29 @@ export const CLASSREFERENCES: ClassReference[] = [
     {RealRoom: 'E136', RefRoom: 'E18D'},
 
     //F Rooms
-    {RealRoom: 'F100', RefRoom: 'F18D'},
-    {RealRoom: 'F103', RefRoom: 'F18D'},
+    {RealRoom: 'F100', RefRoom: 'F100'},
+    {RealRoom: 'F103', RefRoom: 'F103'},
 
     //G Rooms
-    {RealRoom: 'G001', RefRoom: 'G18D'},
-    {RealRoom: 'G002', RefRoom: 'G18D'},
-    {RealRoom: 'G003', RefRoom: 'G18D'},
-    {RealRoom: 'G004', RefRoom: 'G18D'},
-    {RealRoom: 'G101', RefRoom: 'G18D'},
-    {RealRoom: 'G103', RefRoom: 'G18D'},
-    {RealRoom: 'G105', RefRoom: 'G18D'},
-    {RealRoom: 'G107', RefRoom: 'G18D'},
-    {RealRoom: 'G109', RefRoom: 'G18D'},
-    {RealRoom: 'G111', RefRoom: 'G18D'},
-    {RealRoom: 'G113', RefRoom: 'G18D'},
-    {RealRoom: 'G115', RefRoom: 'G18D'},
-    {RealRoom: 'G116', RefRoom: 'G18D'},
-    {RealRoom: 'G117', RefRoom: 'G18D'},
-    {RealRoom: 'G118', RefRoom: 'G18D'},
+    {RealRoom: 'G001', RefRoom: 'G13D'},
+    {RealRoom: 'G002', RefRoom: 'G13D'},
+    {RealRoom: 'G003', RefRoom: 'G13D'},
+    {RealRoom: 'G004', RefRoom: 'G13D'},
+    {RealRoom: 'G101', RefRoom: 'G12D'},
+    {RealRoom: 'G103', RefRoom: 'G13D'},
+    {RealRoom: 'G105', RefRoom: 'G13D'},
+    {RealRoom: 'G107', RefRoom: 'G14D'},
+    {RealRoom: 'G109', RefRoom: 'G14D'},
+    {RealRoom: 'G111', RefRoom: 'G15D'},
+    {RealRoom: 'G113', RefRoom: 'G21D'},
+    {RealRoom: 'G115', RefRoom: 'G21D'},
+    {RealRoom: 'G116', RefRoom: 'G16D'},
+    {RealRoom: 'G117', RefRoom: 'G22D'},
+    {RealRoom: 'G118', RefRoom: 'G16D'},
     {RealRoom: 'G119', RefRoom: 'G18D'},
     {RealRoom: 'G120', RefRoom: 'G18D'},
+
+    //Boiler Room
+    {RealRoom: 'Boiler Room', RefRoom: 'BOIL'},
 
 ];
