@@ -86,7 +86,9 @@ export class AppComponent implements OnInit {
 
   }
 
-  onSubmit(form: NgForm, StartID: number, EndID: number): void {
+  onSubmit(form: NgForm): void {
+    let StartID: number;
+    let EndID: number;
     console.log('Your form data : ', form.value);
     StartID = this.formToID(form.value.start);
     EndID = this.formToID(form.value.end);
