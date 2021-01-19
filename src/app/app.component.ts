@@ -141,6 +141,7 @@ export class AppComponent implements OnInit {
     const path = new ShortestPath(this.graph);
     let route: number[] = [];
     route = path.shortestPath(start, end);
+    console.log(route);
     this.ctx.beginPath();
     for (let i = 0; i < route.length - 1; i++) {
       if (!(ROOMS[route[i] - 1].roomNumber.charAt(0) === 'S' && ROOMS[route[i + 1] - 1].roomNumber.charAt(0) === 'S')) {
@@ -183,9 +184,25 @@ export class AppComponent implements OnInit {
 */
 
 
-// broken paths
+// broken paths (probably still broken)
 // E11U to C35U
 // E30U to E25U
 // E32U to E11U
 // E11U to C35U
 // E33U to E27U
+
+// LIST OF STUFF TO FIX
+
+// E128 (add connection)
+// F103 (fix naming scheme)
+// Boiler Room (fix naming scheme)
+// F103 (fix naming scheme)
+// Cafeteria (add to references)
+// D101 (rereference)
+// C109 (rereference)
+// C111 (rereference)
+// B113 (rereference)
+
+// make forms case insensitive
+
+// make it so we don't have to press go twice

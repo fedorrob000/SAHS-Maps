@@ -34,11 +34,11 @@ export const CLASSREFERENCES: ClassReference[] = [
     {RealRoom: 'C237', RefRoom: 'C33U'},
 
     //D Rooms
-    {RealRoom: 'D200', RefRoom: 'M2U'},
-    {RealRoom: 'D203', RefRoom: 'M0U'},
-    {RealRoom: 'D204', RefRoom: 'M0U'},
-    {RealRoom: 'D205', RefRoom: 'M0U'},
-    {RealRoom: 'D206', RefRoom: 'M0U'},
+    {RealRoom: 'D200', RefRoom: 'M12U'},
+    {RealRoom: 'D203', RefRoom: 'M10U'},
+    {RealRoom: 'D204', RefRoom: 'M10U'},
+    {RealRoom: 'D205', RefRoom: 'M10U'},
+    {RealRoom: 'D206', RefRoom: 'M10U'},
     {RealRoom: 'D208', RefRoom: 'D12U'},
     {RealRoom: 'D212', RefRoom: 'D13U'},
     {RealRoom: 'D214', RefRoom: 'D14U'},
@@ -79,13 +79,13 @@ export const CLASSREFERENCES: ClassReference[] = [
 
     //A Rooms
     {RealRoom: 'A102', RefRoom: 'A12D'},           //Fix, add new line
-    {RealRoom: 'A103', RefRoom: 'A11D'},            
+    {RealRoom: 'A103', RefRoom: 'A11D'},
     {RealRoom: 'A104', RefRoom: 'A11D'},
     {RealRoom: 'A105', RefRoom: 'A12D'},
     {RealRoom: 'A106', RefRoom: 'A12D'},
     {RealRoom: 'A107', RefRoom: 'A13D'},
     {RealRoom: 'A108', RefRoom: 'A13D'},
-    
+
     //B Rooms
     {RealRoom: 'B108', RefRoom: 'M12D'},
     {RealRoom: 'B110', RefRoom: 'B11D'},
@@ -108,7 +108,7 @@ export const CLASSREFERENCES: ClassReference[] = [
     {RealRoom: 'C107', RefRoom: 'C31D'},
     {RealRoom: 'C108', RefRoom: 'C14D'},
     {RealRoom: 'C109', RefRoom: 'C31D'},        //Same as C107
-    {RealRoom: 'C110', RefRoom: 'C15D'},        
+    {RealRoom: 'C110', RefRoom: 'C15D'},
     {RealRoom: 'C111', RefRoom: 'C31D'},        //Same as C107
     {RealRoom: 'C112', RefRoom: 'C24D'},
     {RealRoom: 'C114', RefRoom: 'C22D'},
@@ -121,10 +121,10 @@ export const CLASSREFERENCES: ClassReference[] = [
     {RealRoom: 'C124', RefRoom: 'C33D'},
 
     //D Rooms
-    {RealRoom: 'D100', RefRoom: 'D27D'},        
-    {RealRoom: 'D101', RefRoom: 'M16D'},        
+    {RealRoom: 'D100', RefRoom: 'D27D'},
+    {RealRoom: 'D101', RefRoom: 'M16D'},
     {RealRoom: 'D102', RefRoom: 'D11D'},
-    {RealRoom: 'D103', RefRoom: 'M18D'},        
+    {RealRoom: 'D103', RefRoom: 'M18D'},
     {RealRoom: 'D106', RefRoom: 'D12D'},
     {RealRoom: 'D108', RefRoom: 'D13D'},
     {RealRoom: 'D109', RefRoom: 'D13D'},
