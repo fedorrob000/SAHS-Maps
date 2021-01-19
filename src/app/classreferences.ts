@@ -89,7 +89,7 @@ export const CLASSREFERENCES: ClassReference[] = [
     //B Rooms
     {RealRoom: 'B108', RefRoom: 'M12D'},
     {RealRoom: 'B110', RefRoom: 'B11D'},
-    {RealRoom: 'B113', RefRoom: 'B13D'},
+    {RealRoom: 'B113', RefRoom: 'B12D'},
     {RealRoom: 'B114', RefRoom: 'B14D'},
     {RealRoom: 'B115', RefRoom: 'B21D'},
     {RealRoom: 'B116', RefRoom: 'B21D'},
@@ -107,9 +107,9 @@ export const CLASSREFERENCES: ClassReference[] = [
     {RealRoom: 'C105', RefRoom: 'C12D'},
     {RealRoom: 'C107', RefRoom: 'C31D'},
     {RealRoom: 'C108', RefRoom: 'C14D'},
-    {RealRoom: 'C109', RefRoom: 'C31D'},        //Same as C107
+    {RealRoom: 'C109', RefRoom: 'S17D'},        //Same as C107
     {RealRoom: 'C110', RefRoom: 'C15D'},
-    {RealRoom: 'C111', RefRoom: 'C31D'},        //Same as C107
+    {RealRoom: 'C111', RefRoom: 'S18D'},        //Same as C107
     {RealRoom: 'C112', RefRoom: 'C24D'},
     {RealRoom: 'C114', RefRoom: 'C22D'},
     {RealRoom: 'C115', RefRoom: 'C22D'},
@@ -122,7 +122,7 @@ export const CLASSREFERENCES: ClassReference[] = [
 
     //D Rooms
     {RealRoom: 'D100', RefRoom: 'D27D'},
-    {RealRoom: 'D101', RefRoom: 'M16D'},
+    {RealRoom: 'D101', RefRoom: 'D27D'},
     {RealRoom: 'D102', RefRoom: 'D11D'},
     {RealRoom: 'D103', RefRoom: 'M18D'},
     {RealRoom: 'D106', RefRoom: 'D12D'},
@@ -170,8 +170,8 @@ export const CLASSREFERENCES: ClassReference[] = [
     {RealRoom: 'E136', RefRoom: 'C39D'},
 
     //F Rooms
-    {RealRoom: 'F100', RefRoom: 'F100'},
-    {RealRoom: 'F103', RefRoom: 'F103'},
+    {RealRoom: 'F100', RefRoom: 'F10D'},
+    {RealRoom: 'F103', RefRoom: 'F13D'},
 
     //G Rooms
     {RealRoom: 'G001', RefRoom: 'G13D'},
@@ -193,6 +193,7 @@ export const CLASSREFERENCES: ClassReference[] = [
     {RealRoom: 'G120', RefRoom: 'G18D'},
 
     //Boiler Room
-    {RealRoom: 'Boiler Room', RefRoom: 'BOIL'},
+    {RealRoom: 'BOILER ROOM', RefRoom: 'BOID'},
+    {RealRoom: 'CAFETERIA', RefRoom: 'M42D'},
 
 ];

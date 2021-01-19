@@ -54,6 +54,7 @@ export class AppComponent implements OnInit {
           //   }
           // }
         }
+        this.drawLines();
 
       };
 
@@ -85,19 +86,19 @@ export class AppComponent implements OnInit {
 
   }
 
-  onSubmit(form: NgForm, StartID: number, EndID: number) {
+  onSubmit(form: NgForm, StartID: number, EndID: number): void {
     console.log('Your form data : ', form.value);
     StartID = this.formToID(form.value.start);
     EndID = this.formToID(form.value.end);
-    this.makePath(StartID,EndID);
+    this.makePath(StartID, EndID);
   }
 
   formToID(room: string): number{
     for (let i = 0; i < CLASSREFERENCES.length; i++)
     {
-      if (room === CLASSREFERENCES[i].RealRoom)
+      if (room.toUpperCase() === CLASSREFERENCES[i].RealRoom)
       {
-        return this.roomToID(CLASSREFERENCES[i].RefRoom)
+        return this.roomToID(CLASSREFERENCES[i].RefRoom);
       }
       // Add error if room doesn't exist
     }
@@ -135,21 +136,24 @@ export class AppComponent implements OnInit {
   // 3. split makePath method into makePath and drawLines
   // 4. drawLines will take array as input
   // 5. have onload call drawLines
+  private route: number[] = [];
   makePath(start: number, end: number): void {
     // shortest path stuff
-    this.ctx.drawImage(this.img, 0, 0);
     const path = new ShortestPath(this.graph);
-    let route: number[] = [];
-    route = path.shortestPath(start, end);
-    console.log(route);
+    this.route = path.shortestPath(start, end);
+    this.drawLines();
+  }
+
+  drawLines(): void {
+    this.ctx.drawImage(this.img, 0, 0);
     this.ctx.beginPath();
-    for (let i = 0; i < route.length - 1; i++) {
-      if (!(ROOMS[route[i] - 1].roomNumber.charAt(0) === 'S' && ROOMS[route[i + 1] - 1].roomNumber.charAt(0) === 'S')) {
-        if ((ROOMS[route[i] - 1].roomNumber.charAt(3) === 'U' && this.currentlySelectedUpstairs) ||
-          ROOMS[route[i] - 1].roomNumber.charAt(3) === 'D' && !this.currentlySelectedUpstairs) {
-            this.ctx.moveTo(ROOMS[route[i] - 1].xPosition * this.scale, ROOMS[route[i] - 1].yPosition * this.scale);
-            this.ctx.lineTo(ROOMS[route[i + 1] - 1].xPosition * this.scale, ROOMS[route[i + 1] - 1].yPosition * this.scale);
-            this.ctx.stroke();
+    for (let i = 0; i < this.route.length - 1; i++) {
+      if (!(ROOMS[this.route[i] - 1].roomNumber.charAt(0) === 'S' && ROOMS[this.route[i + 1] - 1].roomNumber.charAt(0) === 'S')) {
+        if ((ROOMS[this.route[i] - 1].roomNumber.charAt(3) === 'U' && this.currentlySelectedUpstairs) ||
+          ROOMS[this.route[i] - 1].roomNumber.charAt(3) === 'D' && !this.currentlySelectedUpstairs) {
+          this.ctx.moveTo(ROOMS[this.route[i] - 1].xPosition * this.scale, ROOMS[this.route[i] - 1].yPosition * this.scale);
+          this.ctx.lineTo(ROOMS[this.route[i + 1] - 1].xPosition * this.scale, ROOMS[this.route[i + 1] - 1].yPosition * this.scale);
+          this.ctx.stroke();
         }
       }
     }
