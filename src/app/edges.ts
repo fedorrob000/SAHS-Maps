@@ -6,6 +6,25 @@ export const EDGES: Edge[] = [
   // upstairs must be higher in the code
   // index will be used to determine floor
 
+  // main hall upstairs test
+  {roomOne: 'C11U', roomTwo: 'M4U', weight: 1}, // C-Hall-North to C-Hall-South
+  {roomOne: 'M4U', roomTwo: 'S11U', weight: 1}, // Main Hall To Stair C
+  {roomOne: 'D24U', roomTwo: 'S12U', weight: 1}, // D Hall South to Stair D
+  {roomOne: 'M2U', roomTwo: 'S13U', weight: 1}, // Center of main hall to Main Stair D
+  {roomOne: 'M5U', roomTwo: 'S14U', weight: 1}, // E Hall to Stair E
+  {roomOne: 'E33U', roomTwo: 'S15U', weight: 1}, // Center of back E hall to stairs
+  {roomOne: 'C35U', roomTwo: 'S16U', weight: 1},  // C back hallway to stairs
+  {roomOne: 'M4U', roomTwo: 'C21U', weight: 1}, // C-Hall-North to C-Hall-South
+  {roomOne: 'C21U', roomTwo: 'M1U', weight: 1}, // C-Hall-South to right of D206
+  {roomOne: 'M1U', roomTwo: 'D11U', weight: 1}, // right of D206 to D-Hall-North
+  {roomOne: 'D11U', roomTwo: 'M2U', weight: 1}, // D-Hall-North to center of main hall
+  {roomOne: 'M2U', roomTwo: 'M0U', weight: 1}, // center of main hall to D203/D204/D205/D206
+  {roomOne: 'M2U', roomTwo: 'D21U', weight: 1}, // center of main hall to D-Hall-South
+  {roomOne: 'D21U', roomTwo: 'M3U', weight: 1}, // D-Hall-South to right of D204
+  {roomOne: 'M3U', roomTwo: 'E11U', weight: 1}, // right of D204 to E-Hall-North
+  {roomOne: 'E11U', roomTwo: 'M5U', weight: 1}, // E-Hall-North to E-Hall-South
+  {roomOne: 'M5U', roomTwo: 'E21U', weight: 1}, // E-Hall-North to E-Hall-South
+
   // hall C north upstairs test
   {roomOne: 'C11U', roomTwo: 'C12U', weight: 1}, // main hall to C202
   {roomOne: 'C12U', roomTwo: 'C13U', weight: 1}, // C202 to C203/C204
@@ -14,7 +33,7 @@ export const EDGES: Edge[] = [
   {roomOne: 'C15U', roomTwo: 'C16U', weight: 1}, // C206/C207 to C208
   {roomOne: 'C16U', roomTwo: 'C17U', weight: 1}, // C208 to C209/C210
   {roomOne: 'C17U', roomTwo: 'C18U', weight: 1}, // C209/C210 to C211/C212/hallway
-  {roomOne: 'C18U', roomTwo: 'C19U', weight: 1}, // C211/C212 to stairs
+  {roomOne: 'C18U', roomTwo: 'S17U', weight: 1}, // C211/C212 to stairs
 
   // hall C east upstairs 1 test
   {roomOne: 'C18U', roomTwo: 'C28U', weight: 1}, // C211/C212/hallway to C222/hallway/C221/C224
@@ -34,7 +53,7 @@ export const EDGES: Edge[] = [
   {roomOne: 'C25U', roomTwo: 'C26U', weight: 1}, // C220 to hallway
   {roomOne: 'C26U', roomTwo: 'C27U', weight: 1}, // hallway to C219
   {roomOne: 'C27U', roomTwo: 'C28U', weight: 1}, // C219 to C222/hallway/C221/C224
-  {roomOne: 'C28U', roomTwo: 'C29U', weight: 1}, // C222/hallway/C221/C224 to stairs
+  {roomOne: 'C28U', roomTwo: 'S18U', weight: 1}, // C222/hallway/C221/C224 to stairs
 
   // hall E north upstairs test
   {roomOne: 'E11U', roomTwo: 'E12U', weight: 1}, // main hall to E202/E203
@@ -44,7 +63,7 @@ export const EDGES: Edge[] = [
   {roomOne: 'E15U', roomTwo: 'E16U', weight: 1}, // E207 to E206
   {roomOne: 'E16U', roomTwo: 'E17U', weight: 1}, // E206 to E208
   {roomOne: 'E17U', roomTwo: 'E18U', weight: 1}, // E208 to E209/E210/E211/E212/hallway
-  {roomOne: 'E18U', roomTwo: 'E19U', weight: 1}, // E209/E210/E211/E212/hallway to stairs
+  {roomOne: 'E18U', roomTwo: 'S20U', weight: 1}, // E209/E210/E211/E212/hallway to stairs
 
   // hall E south upstairs test
   {roomOne: 'E21U', roomTwo: 'E22U', weight: 1}, // main hall/E214 to E216/E215
@@ -53,7 +72,7 @@ export const EDGES: Edge[] = [
   {roomOne: 'E24U', roomTwo: 'E25U', weight: 1}, // E217 to E220
   {roomOne: 'E25U', roomTwo: 'E26U', weight: 1}, // E220 to E222
   {roomOne: 'E26U', roomTwo: 'E27U', weight: 15}, // E222 to E223/E224/E225/E226/hallway
-  {roomOne: 'E27U', roomTwo: 'E28U', weight: 1}, // E223/E224/E225/E226/hallway to stairs
+  {roomOne: 'E27U', roomTwo: 'S19U', weight: 1}, // E223/E224/E225/E226/hallway to stairs
 
   // hall E east upstairs test
   {roomOne: 'E27U', roomTwo: 'E18U', weight: 1}, // E223/E224/E225/E226/hallway to E209/E210/E211/E212/hallway
@@ -73,18 +92,6 @@ export const EDGES: Edge[] = [
   {roomOne: 'D23U', roomTwo: 'D24U', weight: 1}, // D218 to above stairs
   {roomOne: 'D24U', roomTwo: 'D25U  ', weight: 1}, // above stairs to stairs
 
-  // main hall upstairs test
-  {roomOne: 'C11U', roomTwo: 'M4U', weight: 1}, // C-Hall-North to C-Hall-South
-  {roomOne: 'M4U', roomTwo: 'S11U', weight: 1}, // Main Hall To Stair C
-  {roomOne: 'M4U', roomTwo: 'C21U', weight: 1}, // C-Hall-North to C-Hall-South
-  {roomOne: 'C21U', roomTwo: 'M1U', weight: 1}, // C-Hall-South to right of D206
-  {roomOne: 'M1U', roomTwo: 'D11U', weight: 1}, // right of D206 to D-Hall-North
-  {roomOne: 'D11U', roomTwo: 'M2U', weight: 1}, // D-Hall-North to center of main hall
-  {roomOne: 'M2U', roomTwo: 'M0U', weight: 1}, // center of main hall to D203/D204/D205/D206
-  {roomOne: 'M2U', roomTwo: 'D21U', weight: 1}, // center of main hall to D-Hall-South
-  {roomOne: 'D21U', roomTwo: 'M3U', weight: 1}, // D-Hall-South to right of D204
-  {roomOne: 'M3U', roomTwo: 'E11U', weight: 1}, // right of D204 to E-Hall-North
-  {roomOne: 'E11U', roomTwo: 'E21U', weight: 1}, // E-Hall-North to E-Hall-South
 
   // 57 total edges for upstairs
 
@@ -106,7 +113,13 @@ export const EDGES: Edge[] = [
   {roomOne: 'M22D', roomTwo: 'M23D', weight: 1}, // main hall A to B108
   {roomOne: 'M23D', roomTwo: 'M24D', weight: 1}, // main hall A to B108
   {roomOne: 'M24D', roomTwo: 'M25D', weight: 1}, // main hall A to B108
-  {roomOne: 'M14D', roomTwo: 'S11D', weight: 1},
+  {roomOne: 'M14D', roomTwo: 'S11D', weight: 1}, // Main hall to C Stairs
+  {roomOne: 'D23D', roomTwo: 'S12D', weight: 1}, // D hall to D stairs main
+  {roomOne: 'M18D', roomTwo: 'S13D', weight: 1}, // Main hall to D stairs main
+  {roomOne: 'M22D', roomTwo: 'S14D', weight: 1}, // Main hall to E stairs main
+  {roomOne: 'C38D', roomTwo: 'S15D', weight: 1}, // Back hall to E stairs
+  {roomOne: 'C34D', roomTwo: 'S16D', weight: 1}, // Back hall to C stairs  
+
 
   // {roomOne: 'M25D', roomTwo: 'M26D', weight: 1}, // main hall A to B108
 
@@ -149,13 +162,13 @@ export const EDGES: Edge[] = [
   {roomOne: 'C12D', roomTwo: 'C13D', weight: 1}, //
   {roomOne: 'C13D', roomTwo: 'C14D', weight: 1}, //
   {roomOne: 'C14D', roomTwo: 'C15D', weight: 1}, //
-  {roomOne: 'C15D', roomTwo: 'C16D', weight: 1}, //
+  {roomOne: 'C15D', roomTwo: 'S17D', weight: 1}, //
 
   {roomOne: 'M15D', roomTwo: 'C21D', weight: 1}, //
   {roomOne: 'C21D', roomTwo: 'C22D', weight: 1}, //
   {roomOne: 'C22D', roomTwo: 'C23D', weight: 1}, //
   {roomOne: 'C23D', roomTwo: 'C24D', weight: 1}, //
-  {roomOne: 'C24D', roomTwo: 'C25D', weight: 1}, //
+  {roomOne: 'C24D', roomTwo: 'S18D', weight: 1}, //
 
   // hall D downstairs test
     // north
@@ -180,7 +193,7 @@ export const EDGES: Edge[] = [
   {roomOne: 'E13D', roomTwo: 'E14D', weight: 1}, //
   {roomOne: 'E14D', roomTwo: 'E15D', weight: 1}, //
   {roomOne: 'E15D', roomTwo: 'E16D', weight: 1}, //
-  {roomOne: 'E16D', roomTwo: 'E17D', weight: 1}, //
+  {roomOne: 'E16D', roomTwo: 'S20D', weight: 1}, //
     // south
   {roomOne: 'M23D', roomTwo: 'E21D', weight: 1}, //
   {roomOne: 'E21D', roomTwo: 'E22D', weight: 1}, //
@@ -190,7 +203,7 @@ export const EDGES: Edge[] = [
   {roomOne: 'E25D', roomTwo: 'E26D', weight: 1}, //
   {roomOne: 'E26D', roomTwo: 'E27D', weight: 1}, //
   {roomOne: 'E27D', roomTwo: 'E28D', weight: 1}, //
-  {roomOne: 'E28D', roomTwo: 'E29D', weight: 1}, //
+  {roomOne: 'E28D', roomTwo: 'S19D', weight: 1}, //
     // connect
   {roomOne: 'E28D', roomTwo: 'E16D', weight: 1}, //
 
@@ -212,6 +225,15 @@ export const EDGES: Edge[] = [
   {roomOne: 'F103', roomTwo: 'F100', weight: 1}, // main hall A to B108
 
   // Staircases
-  {roomOne: 'S11D', roomTwo: 'S11U', weight: 1}, // Stair C103 up
+  {roomOne: 'S11D', roomTwo: 'S11U', weight: 1}, // C Wing Stairs
+  {roomOne: 'S12D', roomTwo: 'S12U', weight: 1}, // D Hall Stairs
+  {roomOne: 'S13D', roomTwo: 'S13U', weight: 1}, // D Hall Stairs Main
+  {roomOne: 'S14D', roomTwo: 'S14U', weight: 1}, // E Wing Stairs
+  {roomOne: 'S15D', roomTwo: 'S15U', weight: 1}, // E Wing Stairs Back
+  {roomOne: 'S16D', roomTwo: 'S16U', weight: 1}, // C Wing Stairs Back
+  {roomOne: 'S17D', roomTwo: 'S17U', weight: 1}, // C stair, 211/212
+  {roomOne: 'S18D', roomTwo: 'S18U', weight: 1}, // C stair, 221,224
+  {roomOne: 'S19D', roomTwo: 'S19U', weight: 1}, // E stairs left
+  {roomOne: 'S20D', roomTwo: 'S20U', weight: 1}, // E stairs right
 
 ];

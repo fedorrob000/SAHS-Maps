@@ -22,7 +22,6 @@ export const ROOMS: Room[] = [
   {roomNumber: 'C16U', xPosition: 392, yPosition: 220}, // 6
   {roomNumber: 'C17U', xPosition: 520, yPosition: 128}, // 7
   {roomNumber: 'C18U', xPosition: 540, yPosition: 114}, // 8
-  {roomNumber: 'C19U', xPosition: 601, yPosition: 71}, // 9
 
   // hall C south upstairs
   {roomNumber: 'C21U', xPosition: 328, yPosition: 504}, // 10
@@ -33,7 +32,6 @@ export const ROOMS: Room[] = [
   {roomNumber: 'C26U', xPosition: 695, yPosition: 244}, // 15
   {roomNumber: 'C27U', xPosition: 737, yPosition: 214}, // 16
   {roomNumber: 'C28U', xPosition: 757, yPosition: 199}, // 17
-  {roomNumber: 'C29U', xPosition: 818, yPosition: 155}, // 18
 
   // hall C east upstairs
   {roomNumber: 'C31U', xPosition: 900, yPosition: 322}, // 20
@@ -51,7 +49,6 @@ export const ROOMS: Room[] = [
   {roomNumber: 'E16U', xPosition: 582, yPosition: 1162}, // 30
   {roomNumber: 'E17U', xPosition: 618, yPosition: 1188}, // 31
   {roomNumber: 'E18U', xPosition: 758, yPosition: 1288}, // 32
-  {roomNumber: 'E19U', xPosition: 818, yPosition: 1331}, // 33
 
   // hall E south upstairs
   {roomNumber: 'E21U', xPosition: 118, yPosition: 1068}, // 34
@@ -61,7 +58,6 @@ export const ROOMS: Room[] = [
   {roomNumber: 'E25U', xPosition: 358, yPosition: 1239}, // 38
   {roomNumber: 'E26U', xPosition: 394, yPosition: 1265}, // 39
   {roomNumber: 'E27U', xPosition: 539, yPosition: 1369}, // 40
-  {roomNumber: 'E28U', xPosition: 600, yPosition: 1413}, // 41
 
   // hall E east upstairs
   {roomNumber: 'E30U', xPosition: 967, yPosition: 1210}, // 43
@@ -75,6 +71,7 @@ export const ROOMS: Room[] = [
   {roomNumber: 'M2U', xPosition: 494, yPosition: 739}, // 49
   {roomNumber: 'M3U', xPosition: 464, yPosition: 860}, // 50
   {roomNumber: 'M4U', xPosition: 230, yPosition: 465}, // 50
+  {roomNumber: 'M5U', xPosition: 245, yPosition: 1020}, // 50
 
   // north D hallway upstairs
   {roomNumber: 'D11U', xPosition: 490, yPosition: 675}, // 51
@@ -147,14 +144,12 @@ export const ROOMS: Room[] = [
   {roomNumber: 'C13D', xPosition: 1732, yPosition: 285}, // hall
   {roomNumber: 'C14D', xPosition: 1742, yPosition: 270}, // hall, c108,
   {roomNumber: 'C15D', xPosition: 1767, yPosition: 232}, // c110
-  {roomNumber: 'C16D', xPosition: 1810, yPosition: 170}, // stair, c109
 
   // hall C north 2 downstairs
   {roomNumber: 'C21D', xPosition: 1727, yPosition: 535}, // c118, c103
   {roomNumber: 'C22D', xPosition: 1810, yPosition: 410}, // c115, c114
   {roomNumber: 'C23D', xPosition: 1850, yPosition: 352}, // hall
   {roomNumber: 'C24D', xPosition: 1885, yPosition: 302}, // c112
-  {roomNumber: 'C25D', xPosition: 1920, yPosition: 250}, // c111/stair
 
   // hall D north downstairs
   {roomNumber: 'D11D', xPosition: 1825, yPosition: 795}, // D102
@@ -179,7 +174,6 @@ export const ROOMS: Room[] = [
   {roomNumber: 'E14D', xPosition: 1790, yPosition: 1280}, // E106/E108
   {roomNumber: 'E15D', xPosition: 1844, yPosition: 1360}, // E110/E111
   {roomNumber: 'E16D', xPosition: 1885, yPosition: 1420}, // hall/E114/E112/E115
-  {roomNumber: 'E17D', xPosition: 1915, yPosition: 1460}, // stairs
 
   // hall E south downstairs
   {roomNumber: 'E21D', xPosition: 1596, yPosition: 1240}, // E116
@@ -190,7 +184,6 @@ export const ROOMS: Room[] = [
   {roomNumber: 'E26D', xPosition: 1739, yPosition: 1450}, // E121
   {roomNumber: 'E27D', xPosition: 1756, yPosition: 1475}, // E126
   {roomNumber: 'E28D', xPosition: 1776, yPosition: 1505}, // hall
-  {roomNumber: 'E29D', xPosition: 1805, yPosition: 1547}, // stairs
 
 
   // hall E east downstairs
@@ -218,7 +211,26 @@ export const ROOMS: Room[] = [
 
   // Staircases Downstairs
   {roomNumber: 'S11D', xPosition: 1650, yPosition: 530}, // C Wing Stairs
+  {roomNumber: 'S12D', xPosition: 1910, yPosition: 985}, // D hall Stairs
+  {roomNumber: 'S13D', xPosition: 1800, yPosition: 864}, // D hall Stairs main
+  {roomNumber: 'S14D', xPosition: 1650, yPosition: 1195}, // E Wing Stairs
+  {roomNumber: 'S15D', xPosition: 2050, yPosition: 1070}, // E Wing Stairs Back
+  {roomNumber: 'S16D', xPosition: 2050, yPosition: 630}, // C Wing Stairs Back
+  {roomNumber: 'S17D', xPosition: 1810, yPosition: 170}, // C stair, c109
+  {roomNumber: 'S18D', xPosition: 1920, yPosition: 250}, // C stair, c111
+  {roomNumber: 'S19D', xPosition: 1805, yPosition: 1547}, // E stairs Left
+  {roomNumber: 'S20D', xPosition: 1915, yPosition: 1460}, // E stairs Right
 
   // Staircases Upstairs
   {roomNumber: 'S11U', xPosition: 275, yPosition: 425}, // C Wing Stairs
+  {roomNumber: 'S12U', xPosition: 804, yPosition: 850}, // D Hall Stairs
+  {roomNumber: 'S13U', xPosition: 580, yPosition: 739}, // D Hall Stairs Main
+  {roomNumber: 'S14U', xPosition: 270, yPosition: 1050}, // E Wing Stairs
+  {roomNumber: 'S15U', xPosition: 1110, yPosition: 960}, // E Wing Stairs Back
+  {roomNumber: 'S16U', xPosition: 1110, yPosition: 500}, // C Wing Stairs Back
+  {roomNumber: 'S17U', xPosition: 601, yPosition: 71}, // C stair, 211/212
+  {roomNumber: 'S18U', xPosition: 818, yPosition: 155}, // C stair, 221,224
+  {roomNumber: 'S19U', xPosition: 600, yPosition: 1413}, // E stairs left
+  {roomNumber: 'S20U', xPosition: 818, yPosition: 1331}, // E stairs right
+
 ];
