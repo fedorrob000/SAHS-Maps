@@ -126,6 +126,7 @@ export const ROOMS: Room[] = [
   {roomNumber: 'A11D', xPosition: 1170, yPosition: 185}, // a103/a104
   {roomNumber: 'A12D', xPosition: 1205, yPosition: 185}, // a105/a106
   {roomNumber: 'A13D', xPosition: 1275, yPosition: 185}, // a107/a108
+  {roomNumber: 'A14D', xPosition: 1240, yPosition: 540}, // a102
 
   // hall B East downstairs
   {roomNumber: 'B21D', xPosition: 1455, yPosition: 185}, // b115/ b116

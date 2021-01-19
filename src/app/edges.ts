@@ -144,6 +144,7 @@ export const EDGES: Edge[] = [
   {roomOne: 'A11D', roomTwo: 'A12D', weight: 1}, // main hall to C202
   {roomOne: 'A12D', roomTwo: 'A13D', weight: 1}, // main hall to C202
   {roomOne: 'A13D', roomTwo: 'B13D', weight: 1}, // main hall to C202
+  {roomOne: 'M11D', roomTwo: 'A14D', weight: 1}, // main hall to C202
 
   // hall B downstairs test
   {roomOne: 'M11D', roomTwo: 'B11D', weight: 1}, // main hall to C202

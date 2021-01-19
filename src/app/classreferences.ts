@@ -78,7 +78,7 @@ export const CLASSREFERENCES: ClassReference[] = [
     // --------------- DOWNSTAIRS --------------------------------------------------------------------
 
     //A Rooms
-    {RealRoom: 'A102', RefRoom: 'A12D'},           //Fix, add new line
+    {RealRoom: 'A102', RefRoom: 'A14D'},           //Fix, add new line
     {RealRoom: 'A103', RefRoom: 'A11D'},
     {RealRoom: 'A104', RefRoom: 'A11D'},
     {RealRoom: 'A105', RefRoom: 'A12D'},
@@ -194,6 +194,6 @@ export const CLASSREFERENCES: ClassReference[] = [
 
     //Boiler Room
     {RealRoom: 'BOILER ROOM', RefRoom: 'BOID'},
-    {RealRoom: 'CAFETERIA', RefRoom: 'M42D'},
+    {RealRoom: 'CAFETERIA', RefRoom: 'M24D'},
 
 ];
