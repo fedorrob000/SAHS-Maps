@@ -1,4 +1,4 @@
-import {ClassReference} from './classReference';
+import {ClassReference} from './classreference';
 
 export const CLASSREFERENCES: ClassReference[] = [
 

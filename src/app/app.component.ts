@@ -23,6 +23,7 @@ export class AppComponent implements OnInit {
   private img = new Image();
   private firstRun = true;
   private currentlySelectedUpstairs = false;
+  private route: number[] = [];
 
   ngOnInit(): void {
     // run only on first load of app ------------------------------------------------------------------------------
@@ -33,7 +34,7 @@ export class AppComponent implements OnInit {
       this.img.src = 'assets/SAHS_MAP.png';
 
       this.img.onload = () => {
-        this.ctx.clearRect(0,0,3000,2000);
+        this.ctx.clearRect(0, 0, 3000, 2000);
         this.ctx.scale(this.scale, this.scale);
         this.ctx.drawImage(this.img, 0, 0);
         this.ctx.strokeStyle = '#ff0000';
@@ -104,6 +105,7 @@ export class AppComponent implements OnInit {
       }
       // Add error if room doesn't exist
     }
+    this.route = null;
   }
 
   drawEdge(edge: GraphEdge<any>): void {
@@ -132,13 +134,6 @@ export class AppComponent implements OnInit {
     }
   }
 
-  // plan for keeping lines when switching map
-  // 1. make class variable number array
-  // 2. when calling shortest path update this array
-  // 3. split makePath method into makePath and drawLines
-  // 4. drawLines will take array as input
-  // 5. have onload call drawLines
-  private route: number[] = [];
   makePath(start: number, end: number): void {
     // shortest path stuff
     const path = new ShortestPath(this.graph);
