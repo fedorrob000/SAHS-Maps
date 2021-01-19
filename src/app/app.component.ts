@@ -182,27 +182,3 @@ export class AppComponent implements OnInit {
     }
   }
 */
-
-
-// broken paths (probably still broken)
-// E11U to C35U
-// E30U to E25U
-// E32U to E11U
-// E11U to C35U
-// E33U to E27U
-
-// LIST OF STUFF TO FIX
-
-// E128 (add connection)
-// F103 (fix naming scheme)
-// Boiler Room (fix naming scheme)
-// F103 (fix naming scheme)
-// Cafeteria (add to references)
-// D101 (rereference)
-// C109 (rereference)
-// C111 (rereference)
-// B113 (rereference)
-
-// make forms case insensitive
-
-// make it so we don't have to press go twice
