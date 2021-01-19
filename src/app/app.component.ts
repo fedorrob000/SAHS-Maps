@@ -4,7 +4,7 @@ import {Graph, GraphEdge, GraphVertex} from 'actslib';
 import {Room} from './room';
 import {ROOMS} from './rooms';
 import {EDGES} from './edges';
-import {CLASSREFERENCES} from './classreferences'
+import {CLASSREFERENCES} from './classreferences';
 import {ShortestPath} from './canvas/ShortestPath';
 
 
@@ -41,18 +41,18 @@ export class AppComponent implements OnInit {
         // draw all edges
         if (this.currentlySelectedUpstairs) {
           this.ctx.lineWidth = 10;
-          for (let i = 0; i < this.graph.EdgeNumber(); i++) {
-            if (i < 57) {
-              this.drawEdge(this.graph.Edges()[i]);
-            }
-          }
+          // for (let i = 0; i < this.graph.EdgeNumber(); i++) {
+          //   if (i < 63) {
+          //     this.drawEdge(this.graph.Edges()[i]);
+          //   }
+          // }
         } else {
           this.ctx.lineWidth = 9;
-          for (let i = 0; i < this.graph.EdgeNumber(); i++) {
-            if (i >= 57) {
-              this.drawEdge(this.graph.Edges()[i]);
-            }
-          }
+          // for (let i = 0; i < this.graph.EdgeNumber(); i++) {
+          //   if (i >= 63) {
+          //     this.drawEdge(this.graph.Edges()[i]);
+          //   }
+          // }
         }
 
       };
@@ -89,7 +89,7 @@ export class AppComponent implements OnInit {
     console.log('Your form data : ', form.value);
     StartID = this.formToID(form.value.start);
     EndID = this.formToID(form.value.end);
-    this.drawLines(StartID,EndID);
+    this.makePath(StartID,EndID);
   }
 
   formToID(room: string): number{
@@ -104,13 +104,13 @@ export class AppComponent implements OnInit {
   }
 
   drawEdge(edge: GraphEdge<any>): void {
-    const room1: Room = this.graph.Vertexs().find(v => v.id === edge.to).value;
-    const room2: Room = this.graph.Vertexs().find(v => v.id === edge.from).value;
-
-    this.ctx.beginPath();
-    this.ctx.moveTo(room1.xPosition * this.scale, room1.yPosition * this.scale);
-    this.ctx.lineTo(room2.xPosition * this.scale, room2.yPosition * this.scale);
-    this.ctx.stroke();
+    // const room1: Room = this.graph.Vertexs().find(v => v.id === edge.to).value;
+    // const room2: Room = this.graph.Vertexs().find(v => v.id === edge.from).value;
+    //
+    // this.ctx.beginPath();
+    // this.ctx.moveTo(room1.xPosition * this.scale, room1.yPosition * this.scale);
+    // this.ctx.lineTo(room2.xPosition * this.scale, room2.yPosition * this.scale);
+    // this.ctx.stroke();
   }
 
   roomToID(roomNum: string): number {
@@ -129,19 +129,28 @@ export class AppComponent implements OnInit {
     }
   }
 
-  drawLines(start: number, end: number): void {
+  // plan for keeping lines when switching map
+  // 1. make class variable number array
+  // 2. when calling shortest path update this array
+  // 3. split makePath method into makePath and drawLines
+  // 4. drawLines will take array as input
+  // 5. have onload call drawLines
+  makePath(start: number, end: number): void {
     // shortest path stuff
     this.ctx.drawImage(this.img, 0, 0);
     const path = new ShortestPath(this.graph);
     let route: number[] = [];
     route = path.shortestPath(start, end);
+    this.ctx.beginPath();
     for (let i = 0; i < route.length - 1; i++) {
-      this.ctx.beginPath();
-      this.ctx.moveTo(ROOMS[route[i] - 1].xPosition * this.scale, ROOMS[route[i] - 1].yPosition * this.scale);
-      this.ctx.lineTo(ROOMS[route[i + 1] - 1].xPosition * this.scale, ROOMS[route[i + 1] - 1].yPosition * this.scale);
-      this.ctx.stroke();
-      console.log(ROOMS[route[i]]);
-      console.log(ROOMS[route[i + 1]]);
+      if (!(ROOMS[route[i] - 1].roomNumber.charAt(0) === 'S' && ROOMS[route[i + 1] - 1].roomNumber.charAt(0) === 'S')) {
+        if ((ROOMS[route[i] - 1].roomNumber.charAt(3) === 'U' && this.currentlySelectedUpstairs) ||
+          ROOMS[route[i] - 1].roomNumber.charAt(3) === 'D' && !this.currentlySelectedUpstairs) {
+            this.ctx.moveTo(ROOMS[route[i] - 1].xPosition * this.scale, ROOMS[route[i] - 1].yPosition * this.scale);
+            this.ctx.lineTo(ROOMS[route[i + 1] - 1].xPosition * this.scale, ROOMS[route[i + 1] - 1].yPosition * this.scale);
+            this.ctx.stroke();
+        }
+      }
     }
   }
 }
