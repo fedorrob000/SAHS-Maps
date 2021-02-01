@@ -1,3 +1,8 @@
+/*
+AUTHORS
+Robert Michael Fedor
+Noah Michael Ritter
+ */
 import { Room } from './room';
 
 export const ROOMS: Room[] = [

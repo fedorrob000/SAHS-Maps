@@ -1,5 +1,7 @@
+// AUTHOR
+// Joseph T. Fedor
 import {Graph, GraphEdge, GraphVertex} from 'actslib';
-import {Room} from '../room';
+import {Room} from './room';
 
 class GraphContainer {
   constructor(visited: number, visitedfrom: GraphContainer, num: number) {

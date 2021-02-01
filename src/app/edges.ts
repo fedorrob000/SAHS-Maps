@@ -1,10 +1,13 @@
+/*
+AUTHORS
+Robert Michael Fedor
+Noah Michael Ritter
+ */
 import {Edge} from './edge';
 
 export const EDGES: Edge[] = [
 
   // --------------- UPSTAIRS --------------------------------------------------------------------
-  // upstairs must be higher in the code
-  // index will be used to determine floor
 
   // main hall upstairs test
   {roomOne: 'C11U', roomTwo: 'M14U', weight: 1}, // C-Hall-North to C-Hall-South

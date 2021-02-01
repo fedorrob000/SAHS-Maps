@@ -1,11 +1,15 @@
+/*
+AUTHORS
+Robert Michael Fedor
+Noah Michael Ritter
+ */
 import {ClassReference} from './classreference';
 
 export const CLASSREFERENCES: ClassReference[] = [
 
     // --------------- UPSTAIRS --------------------------------------------------------------------
 
-
-    //C Rooms
+    // C Rooms
     {RealRoom: 'C202', RefRoom: 'C12U'},
     {RealRoom: 'C203', RefRoom: 'C13U'},
     {RealRoom: 'C204', RefRoom: 'C13U'},
@@ -123,6 +127,7 @@ export const CLASSREFERENCES: ClassReference[] = [
     //D Rooms
     {RealRoom: 'D100', RefRoom: 'D27D'},
     {RealRoom: 'D101', RefRoom: 'D27D'},
+    {RealRoom: 'MAIN ENTRANCE', RefRoom: 'D27D'},
     {RealRoom: 'D102', RefRoom: 'D11D'},
     {RealRoom: 'D103', RefRoom: 'M18D'},
     {RealRoom: 'D106', RefRoom: 'D12D'},

@@ -1,3 +1,8 @@
+/*
+AUTHORS
+Robert Michael Fedor
+Noah Michael Ritter
+ */
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {Graph, GraphEdge, GraphVertex} from 'actslib';
@@ -5,8 +10,7 @@ import {Room} from './room';
 import {ROOMS} from './rooms';
 import {EDGES} from './edges';
 import {CLASSREFERENCES} from './classreferences';
-import {ShortestPath} from './canvas/ShortestPath';
-
+import {ShortestPath} from './ShortestPath';
 
 @Component({
   selector: 'app-root',
@@ -42,18 +46,8 @@ export class AppComponent implements OnInit {
         // draw all edges
         if (this.currentlySelectedUpstairs) {
           this.ctx.lineWidth = 10;
-          // for (let i = 0; i < this.graph.EdgeNumber(); i++) {
-          //   if (i < 63) {
-          //     this.drawEdge(this.graph.Edges()[i]);
-          //   }
-          // }
         } else {
           this.ctx.lineWidth = 9;
-          // for (let i = 0; i < this.graph.EdgeNumber(); i++) {
-          //   if (i >= 63) {
-          //     this.drawEdge(this.graph.Edges()[i]);
-          //   }
-          // }
         }
         this.drawLines();
 
@@ -108,16 +102,6 @@ export class AppComponent implements OnInit {
     this.route = null;
   }
 
-  drawEdge(edge: GraphEdge<any>): void {
-    // const room1: Room = this.graph.Vertexs().find(v => v.id === edge.to).value;
-    // const room2: Room = this.graph.Vertexs().find(v => v.id === edge.from).value;
-    //
-    // this.ctx.beginPath();
-    // this.ctx.moveTo(room1.xPosition * this.scale, room1.yPosition * this.scale);
-    // this.ctx.lineTo(room2.xPosition * this.scale, room2.yPosition * this.scale);
-    // this.ctx.stroke();
-  }
-
   roomToID(roomNum: string): number {
     return this.graph.Vertexs().find(v => v.value.roomNumber === roomNum).id;
   }
@@ -156,30 +140,3 @@ export class AppComponent implements OnInit {
     }
   }
 }
-
-
-/*
-  RANDOM ROOM CONNECTOR
-  drawLines(): void {
-    // shortest path stuff
-    this.ctx.clearRect(0,0,3000,2000);
-    this.ctx.drawImage(this.img, 0, 0);
-    const path = new ShortestPath(this.graph);
-    let route: number[] = [];
-    route = path.shortestPath(start,end);
-    let randomNumber: number;
-    let randomNumber2: number;
-    randomNumber = Math.floor(Math.random() * 58 + 1);
-    randomNumber2 = Math.floor(Math.random() * 58 + 1);
-    // route = path.shortestPath(this.roomToID('E33U'), this.roomToID('C33U'));
-    route = path.shortestPath(randomNumber, randomNumber2);
-    console.log('\x1b[31m%s\x1b[0m', ROOMS[randomNumber].roomNumber);
-    console.log('\x1b[31m%s\x1b[0m', ROOMS[randomNumber2].roomNumber);
-    for (let i = 0; i < route.length - 1; i++) {
-      this.ctx.beginPath();
-      this.ctx.moveTo(ROOMS[route[i] - 1].xPosition * this.scale, ROOMS[route[i] - 1].yPosition * this.scale);
-      this.ctx.lineTo(ROOMS[route[i + 1] - 1].xPosition * this.scale, ROOMS[route[i + 1] - 1].yPosition * this.scale);
-      this.ctx.stroke();
-    }
-  }
-*/
